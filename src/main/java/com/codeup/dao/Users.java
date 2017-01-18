@@ -1,5 +1,6 @@
-package com.codeup;
+package com.codeup.dao;
 
+import com.codeup.models.User;
 import org.springframework.data.repository.CrudRepository;
 
 /**
