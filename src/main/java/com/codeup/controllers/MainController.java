@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MainController {
-    @Autowired
-    private DateCategory categoriesDao;
 
     @GetMapping("/")
     public String showWelcome() {
