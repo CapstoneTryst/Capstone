@@ -2,13 +2,45 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/header :: header(${'Welcome to Tryst'})">
     <!--Partial Header from fragments/header.html-->
+    <link rel="stylesheet" href="../static/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../static/css/landing.css" />
 </head>
-<body>
+<body class="gradient">
 
-<div class="container" >
+<nav th:replace="fragments/navbar :: navbar"></nav>
+<div class="container"  id="content">
+<h1>Tryst</h1>
+    <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="enter your zipcode" />
+        <button type="submit" class="btn btn-primary-outline">Go</button>
+        <div class="categories">
+            <div class="date_type" id="casual_first_date">
+                <button type="submit" class="btn btn-primary-outline">Casual First Date</button>
+            </div>
 
-<h1 style="color: darkred">Welcome to Tryst!!</h1>
-
+            <div class="date_type" id="anniversary">
+                <button type="submit" class="btn btn-primary-outline">Anniversary</button>
+            </div>
+            <div class="date_type" id="outdoors">
+                <button type="submit" class="btn btn-primary-outline">Outdoors</button>
+            </div>
+            <div class="date_type" id="sight_seeing">
+                <button type="submit" class="btn btn-primary-outline">Sight Seeing</button>
+            </div>
+            <div class="date_type" id="romantic_date">
+                <button type="submit" class="btn btn-primary-outline">Romantic Date</button>
+            </div>
+            <div class="date_type" id="relaxing_date">
+                <button type="submit" class="btn btn-primary-outline">Relaxing Date</button>
+            </div>
+            <div class="date_type" id="online_meetup">
+                <button type="submit" class="btn btn-primary-outline">First Date IRL</button>
+            </div>
+            <div class="date_type" id="artsy_date">
+                <button type="submit" class="btn btn-primary-outline">Artsy</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 
