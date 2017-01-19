@@ -6,6 +6,7 @@ package com.codeup.YelpRequest;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+import com.codeup.api.TwoStepOAuth;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
