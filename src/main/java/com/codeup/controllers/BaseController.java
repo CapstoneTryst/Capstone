@@ -5,6 +5,7 @@ import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 public class BaseController {
+
     public boolean isLoggedIn() {
         boolean isAnonymousUser =
                 SecurityContextHolder.getContext().getAuthentication() instanceof AnonymousAuthenticationToken;

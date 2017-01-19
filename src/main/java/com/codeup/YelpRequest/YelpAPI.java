@@ -137,15 +137,19 @@ public class YelpAPI {
         try {
             response = (JSONObject) parser.parse(searchResponseJSON);
             System.out.print(response + "\n");
+
         } catch (ParseException pe) {
             System.out.println("Error: could not parse JSON response:");
             System.out.println(searchResponseJSON);
             System.exit(1);
         }
 
+//        <------- Start of single business query ------->
+
         JSONArray businesses = (JSONArray) response.get("businesses");
         JSONObject firstBusiness = (JSONObject) businesses.get(0);
         String firstBusinessID = firstBusiness.get("id").toString();
+        System.out.println("Business ----> " + firstBusiness.get("name"));
         System.out.println(String.format(
                 "%s businesses found, querying business info for the top result \"%s\" ...",
                 businesses.size(), firstBusinessID));
@@ -154,7 +158,9 @@ public class YelpAPI {
         String businessResponseJSON = yelpApi.searchByBusinessId(firstBusinessID.toString());
         System.out.println(String.format("Result for business \"%s\" found:", firstBusinessID));
         System.out.println(businessResponseJSON);
+
     }
+//        ^^^^^^^^ End of single business query ^^^^^^^^^^^
 
     /**
      * Command-line interface for the sample Yelp API runner.
