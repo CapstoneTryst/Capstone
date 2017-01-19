@@ -2,13 +2,36 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/header :: header(${'Show Page'})">
     <!--Partial Header from fragments/header.html-->
+
+    <!--Direct link to style sheet for boot strap auto-fill and quick look in browser-->
+    <link rel="stylesheet" href="../static/css/bootstrap.css"/>
 </head>
 <body>
+    <h1 id="business-name"></h1>
+
+    <button class="categories">Click this shit</button>
+
+<div class="container">
+
+    <div class="col-md-6 col-md-offset-3 text-center">
+        <img alt="200x200" class="" height="200" src="https://s3-media3.fl.yelpcdn.com/bphoto/hMNHD9LHs_R3vFCfTOGorw/o.jpg" width="200" />
+        <br/>
+        <img id="imageUrl" src="https://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png">
+        <p id="reviewCount">255 yelp reviews</p>
+        <h1 id="businessTitle">Business Title </h1>
+        <p id="businessID">(111) 867-5309</p>
+        <p id="businessAddress">The address goes here</p>
+    </div>
 
 
-
+</div>
 
 <!-- jQuery & jsBootstrap CDN from fragments/footer.html-->
-<div th:replace="fragments/footer :: footer"></div>
+<div th:replace="fragments/footer :: footer">
+
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+
+</div>
 </body>
 </html>

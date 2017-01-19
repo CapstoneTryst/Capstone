@@ -1,4 +1,4 @@
-package com.codeup.YelpRequest;
+package com.codeup.api;
 
 /**
  * Created by Austin on 1/17/17.
