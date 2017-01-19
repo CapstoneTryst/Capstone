@@ -6,6 +6,7 @@ package com.codeup.YelpRequest;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+import com.codeup.api.TwoStepOAuth;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -43,8 +44,8 @@ public class YelpAPI {
      */
     private static final String CONSUMER_KEY = "dSVCGtVo4VsxeSy97PISxg";
     private static final String CONSUMER_SECRET = "_RPvdp4_9AVYc-i83L8D1Cvs9n4";
-    private static final String TOKEN = "Yilmc3ffjCstygN7FWeqK27EOVIQzRmy";
-    private static final String TOKEN_SECRET = "kgkf2gcP7UTS_LK4QaYkIZjPTy0";
+    private static final String TOKEN = "MUM_VOM60HrcjEBTwfCySYiy7hBIgIh0";
+    private static final String TOKEN_SECRET = "cSUGqasKMECFxe701LPcICw6GF4";
 
     OAuthService service;
     Token accessToken;
