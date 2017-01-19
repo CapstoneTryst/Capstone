@@ -41,10 +41,10 @@ public class YelpAPI {
      * Update OAuth credentials below from the Yelp Developers API site:
      * http://www.yelp.com/developers/getting_started/api_access
      */
-    private static final String CONSUMER_KEY = "";
-    private static final String CONSUMER_SECRET = "";
-    private static final String TOKEN = "";
-    private static final String TOKEN_SECRET = "";
+    private static final String CONSUMER_KEY = "dSVCGtVo4VsxeSy97PISxg";
+    private static final String CONSUMER_SECRET = "_RPvdp4_9AVYc-i83L8D1Cvs9n4";
+    private static final String TOKEN = "MUM_VOM60HrcjEBTwfCySYiy7hBIgIh0";
+    private static final String TOKEN_SECRET = "cSUGqasKMECFxe701LPcICw6GF4";
 
     OAuthService service;
     Token accessToken;
@@ -136,15 +136,19 @@ public class YelpAPI {
         try {
             response = (JSONObject) parser.parse(searchResponseJSON);
             System.out.print(response + "\n");
+
         } catch (ParseException pe) {
             System.out.println("Error: could not parse JSON response:");
             System.out.println(searchResponseJSON);
             System.exit(1);
         }
 
+//        <------- Start of single business query ------->
+
         JSONArray businesses = (JSONArray) response.get("businesses");
         JSONObject firstBusiness = (JSONObject) businesses.get(0);
         String firstBusinessID = firstBusiness.get("id").toString();
+        System.out.println("Business ----> " + firstBusiness.get("name"));
         System.out.println(String.format(
                 "%s businesses found, querying business info for the top result \"%s\" ...",
                 businesses.size(), firstBusinessID));
@@ -153,7 +157,9 @@ public class YelpAPI {
         String businessResponseJSON = yelpApi.searchByBusinessId(firstBusinessID.toString());
         System.out.println(String.format("Result for business \"%s\" found:", firstBusinessID));
         System.out.println(businessResponseJSON);
+
     }
+//        ^^^^^^^^ End of single business query ^^^^^^^^^^^
 
     /**
      * Command-line interface for the sample Yelp API runner.
