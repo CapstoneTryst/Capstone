@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header(${'Add A Business'})">
+    <!--Partial Header from fragments/header.html-->
+    <link rel="stylesheet" href="../static/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../static/css/landing.css" />
+    <link rel="stylesheet" href="../static/css/animate.css"/>
+</head>
+<body class="gradient">
+<nav th:replace="fragments/navbar :: navbar"></nav>
+<div class="container">
+
+    <input type="text" id="businessTerm" placeholder="Enter the name of the business" />
+    <input type="text" id="businessLocation" placeholder="Enter the location of the business" />
+
+    <button id="businessButton">Search for business</button>
+
+
+
+
+</div>
+<div class="container" id="businessResults">
+
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
