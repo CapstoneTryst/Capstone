@@ -6,6 +6,20 @@ body{
     font-family: 'ostrich', sans-serif;
 }
 
+html, body {
+    height: 100%;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    display: table;
+    text-align: center;
+}
+.container > .categories {
+    display: table-cell;
+    vertical-align: middle;
+}
+
 /*Navigation Bar**/
 
 .navbar-inverse{
@@ -19,6 +33,7 @@ body{
     height: 60px;
 
 }
+
 .navbar-header #brand{
     font-family: 'ostrich', sans-serif;
     color: white;
@@ -47,15 +62,18 @@ body{
     text-decoration: none;
 }
 
-
-#content {
-    width: 150em;
-    margin-left: 25% ;
-    margin-right: auto;
+#content{
+    display: table;
+    margin: 0 auto;
 }
+
+/*#content {*/
+    /*margin-left: 25%;*/
+    /*margin-right: auto;*/
+/*}*/
 .gradient {
     background: -webkit-linear-gradient(90deg, #d64759 10%, #da7352 90%); background: -o-linear-gradient(90deg, #d64759 10%, #da7352 90%); background: linear-gradient(90deg, #d64759 10%, #da7352 90%);
-    position: relative;
+    position: absolute;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -67,6 +85,7 @@ h1 {
 #title {
     font-size: 7em;
     padding-bottom: 5px;
+    margin: 0 auto;
 }
 
 .btn-primary-outline {
@@ -81,8 +100,7 @@ h1 {
 }
 
 .date_type {
-    align-content: center;
+    vertical-align: middle;
     float: left;
     padding: 1em;
 }
-
