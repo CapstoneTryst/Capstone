@@ -18,7 +18,7 @@ public class MainController {
 
     @GetMapping("/")
     public String showWelcome() {
-        return "show";
+        return "welcome";
     }
 
     @GetMapping("/show")

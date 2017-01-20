@@ -3,16 +3,15 @@
 <head th:replace="fragments/header :: header(${'Welcome to Tryst'})">
     <!--Partial Header from fragments/header.html-->
     <link rel="stylesheet" href="../static/css/bootstrap.css"/>
-    <link rel="stylesheet" href="../static/css/landing.css" />
+    <link rel="stylesheet" href="../static/css/landing.css"/>
     <link rel="stylesheet" href="../static/css/animate.css"/>
 </head>
 <body class="gradient">
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<div class="container"  id="content">
-    <div class="animated fadeIn">
-<h1 class="animated fadeIn" id="title">Tryst</h1>
-    <div class="col-lg-4">
-        <input type="text" id="location" class="form-control" placeholder="enter your location" />
+<div class="container animated fadeIn" id="content">
+    <div class="col-md-6 col-md-offset-3 text-center">
+    <h1 id="title">Tryst</h1>
+        <input type="text" id="location" class="form-control" placeholder="enter your location"/>
         <div class="categories">
             <div class="date_type" id="casual_first_date">
                 <button type="submit" class="btn btn-primary-outline">Casual First Date</button>
@@ -47,10 +46,20 @@
             </div>
         </div>
     </div>
+<div class="container" id="showPage" style="display: none;">
+
+    <div class="col-md-6 col-md-offset-3 text-center">
+        <img id="businessImage" alt="200x200" class="" height="200" src="" width="200"/>
+        <br/>
+        <img id="ratingImageUrl" src=""/>
+        <p id="reviewCount"></p>
+        <h1 id="businessTitle"></h1>
+        <p id="businessPhone"></p>
+        <p id="businessAddress"></p>
+        <a id="yelpUrl" href="#">See More about this restaurant on Yelp!</a>
     </div>
 </div>
-
-
+</div>
 
 <!-- jQuery & jsBootstrap CDN from fragments/footer.html-->
 <div th:replace="fragments/footer :: footer"></div>
