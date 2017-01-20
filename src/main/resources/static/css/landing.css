@@ -6,8 +6,7 @@ body{
     font-family: 'ostrich', sans-serif;
 }
 
-/*
-Navigation Bar**/
+/*Navigation Bar**/
 
 .navbar-inverse{
     background-color: rgba(34, 34, 34, 0.5);
@@ -49,17 +48,25 @@ Navigation Bar**/
 }
 
 
-body{
-    position: relative;
-}
-
 #content {
-    width: 100em;
-    margin-left: auto ;
-    margin-right: auto ;
+    width: 150em;
+    margin-left: 25% ;
+    margin-right: auto;
 }
 .gradient {
-    background: -webkit-linear-gradient(90deg, #d64759 10%, #da7352 90%); /* Chrome 10+, Saf5.1+ */ background: -o-linear-gradient(90deg, #d64759 10%, #da7352 90%); /* Opera 11.10+ */ background: linear-gradient(90deg, #d64759 10%, #da7352 90%);
+    background: -webkit-linear-gradient(90deg, #d64759 10%, #da7352 90%); background: -o-linear-gradient(90deg, #d64759 10%, #da7352 90%); background: linear-gradient(90deg, #d64759 10%, #da7352 90%);
+    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1 {
+    text-align: justify
+}
+
+#title {
+    font-size: 7em;
+    padding-bottom: 5px;
 }
 
 .btn-primary-outline {
@@ -67,8 +74,14 @@ body{
     border-color: #ccc;
 }
 
+.input-group-addon {
+    border-radius: 4px;
+    border: 0px;
+    background-color: transparent;
+}
 
 .date_type {
+    align-content: center;
     float: left;
     padding: 1em;
 }
