@@ -4,15 +4,15 @@
     <!--Partial Header from fragments/header.html-->
     <link rel="stylesheet" href="../static/css/bootstrap.css"/>
     <link rel="stylesheet" href="../static/css/landing.css" />
+    <link rel="stylesheet" href="../static/css/animate.css"/>
 </head>
 <body class="gradient">
-
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <div class="container"  id="content">
-<h1>Tryst</h1>
-    <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="enter your zipcode" />
-        <button type="submit" class="btn btn-primary-outline">Go</button>
+    <div class="animated fadeIn">
+<h1 class="animated fadeIn" id="title">Tryst</h1>
+    <div class="col-lg-4">
+        <input type="text" id="location" class="form-control" placeholder="enter your location" />
         <div class="categories">
             <div class="date_type" id="casual_first_date">
                 <button type="submit" class="btn btn-primary-outline">Casual First Date</button>
@@ -39,7 +39,14 @@
             <div class="date_type" id="artsy_date">
                 <button type="submit" class="btn btn-primary-outline">Artsy</button>
             </div>
+            <div class="date_type" id="Live_Music">
+                <button type="submit" class="btn btn-primary-outline">Live Music</button>
+            </div>
+            <div class="date_type" id="No_Money_No_Problem">
+                <button type="submit" class="btn btn-primary-outline">No $$ No Problem</button>
+            </div>
         </div>
+    </div>
     </div>
 </div>
 
