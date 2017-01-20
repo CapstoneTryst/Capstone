@@ -1,6 +1,7 @@
 package com.codeup.controllers;
 
 import com.codeup.api.YelpAPISvc;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,9 @@ public class MainController {
 
     @GetMapping("/show")
     public @ResponseBody JSONObject showPage(@RequestParam(name = "location") String location, Model model) {
-        return yelpAPI.queryAPI(location);
+        JSONArray allBusinesses = yelpAPI.queryAPI(location);
+        int random = (int) Math.floor(Math.random() * allBusinesses.size());
+        return (JSONObject) allBusinesses.get(random);
     }
 
 //    @GetMapping("/{location}/{dateType}")
