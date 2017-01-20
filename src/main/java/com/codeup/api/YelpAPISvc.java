@@ -7,6 +7,8 @@ import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+
 @Service("yelpAPIService")
 public class YelpAPISvc {
     @Value("${yelp-consumer-key}")
@@ -18,11 +20,17 @@ public class YelpAPISvc {
     @Value("${yelp-token-secret}")
     private String tokenSecret;
 
-    Yelp yelpAPI = YelpFactory.getYelpDao();
+    private Yelp yelpAPI;
 
-    public JSONArray queryAPI(String location) {
+    @PostConstruct
+    public void inti() {
+        yelpAPI = new Yelp(consumerKey, consumerSecret, token, tokenSecret);
+    }
+
+
+    public JSONArray queryAPI(String term, String location) {
         String searchResponseJSON =
-                yelpAPI.searchForBusinessesByLocation("", location);
+                yelpAPI.searchForBusinessesByLocation(term, location);
 
         JSONParser parser = new JSONParser();
         JSONObject response = null;
@@ -40,13 +48,5 @@ public class YelpAPISvc {
         String firstBusinessID = firstBusiness.get("id").toString();
 
         return businesses;
-//        System.out.println(String.format(
-//                "%s businesses found, querying business info for the top result \"%s\" ...",
-//                businesses.size(), firstBusinessID));
-//
-//        // Select the first business and display business details
-//        String businessResponseJSON = yelpApi.searchByBusinessId(firstBusinessID.toString());
-//        System.out.println(String.format("Result for business \"%s\" found:", firstBusinessID));
-//        System.out.println(businessResponseJSON);
     }
 }
