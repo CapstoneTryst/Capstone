@@ -1,6 +1,10 @@
 package com.codeup.models;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 /**
@@ -16,12 +20,18 @@ public class User {
     private long id;
 
     @Column(nullable = false, unique = true)
+    @NotBlank(message = "User must have a username.")
+    @Size(min = 4, message = "A password must be at least 4 characters.")
     private String username;
 
     @Column(nullable = false, unique = true)
+    @NotBlank(message = "User must have a valid email.")
+    @Email(message = "Please provide a valid email address. Example@Example.com")
     private String email;
 
     @Column(nullable = false)
+    @NotBlank(message = "Please enter a password.")
+    @Size(min = 5, message = "A password must be at least 5 characters.")
     private String password;
 
     @Column(name = "home_zip")
