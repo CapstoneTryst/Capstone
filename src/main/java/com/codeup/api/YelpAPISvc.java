@@ -20,7 +20,7 @@ public class YelpAPISvc {
 
     Yelp yelpAPI = YelpFactory.getYelpDao();
 
-    public JSONObject queryAPI(String location) {
+    public JSONArray queryAPI(String location) {
         String searchResponseJSON =
                 yelpAPI.searchForBusinessesByLocation("", location);
 
@@ -39,7 +39,7 @@ public class YelpAPISvc {
         JSONObject firstBusiness = (JSONObject) businesses.get(0);
         String firstBusinessID = firstBusiness.get("id").toString();
 
-        return firstBusiness;
+        return businesses;
 //        System.out.println(String.format(
 //                "%s businesses found, querying business info for the top result \"%s\" ...",
 //                businesses.size(), firstBusinessID));
