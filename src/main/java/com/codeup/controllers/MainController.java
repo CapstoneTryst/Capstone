@@ -18,14 +18,29 @@ public class MainController {
 
     @GetMapping("/")
     public String showWelcome() {
-        return "show";
+        return "test";
     }
 
     @GetMapping("/show")
     public @ResponseBody JSONObject showPage(@RequestParam(name = "location") String location, Model model) {
-        JSONArray allBusinesses = yelpAPI.queryAPI(location);
+        JSONArray allBusinesses = yelpAPI.queryAPI("", location);
         int random = (int) Math.floor(Math.random() * allBusinesses.size());
         return (JSONObject) allBusinesses.get(random);
+    }
+
+    @GetMapping("/business/new")
+    public String getBusinessAddPage() {
+        return "business_search";
+    }
+
+    @GetMapping("/business")
+    public @ResponseBody JSONArray getSpecificBusinesses(@RequestParam(name= "name") String term, @RequestParam(name = "location") String location, Model model) {
+        JSONArray allBusinesses = yelpAPI.queryAPI(term, location);
+        JSONArray topOptions = new JSONArray();
+        topOptions.add(allBusinesses.get(0));
+        topOptions.add(allBusinesses.get(1));
+        topOptions.add(allBusinesses.get(2));
+        return topOptions;
     }
 
 //    @GetMapping("/{location}/{dateType}")
