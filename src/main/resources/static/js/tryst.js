@@ -1,3 +1,4 @@
+var searchResults = "";
 $(".date_type").click(function() {
    $.get("/show", {
        location: $("#location").val()
@@ -24,9 +25,11 @@ $("#businessButton").click(function() {
        location: $("#businessLocation").val()
    })
        .done(function(data) {
+           searchResults = "";
           $.each(data, function(index, element) {
-            $("#businessResults").append("<h1>" + element.name + "</h1>")
+            searchResults +=("<h1>" + element.name + "</h1><a href='/business/new/" + element.id + "'>Add to Database</a>")
           });
+           $("#businessResults").html(searchResults);
        });
 });
 
