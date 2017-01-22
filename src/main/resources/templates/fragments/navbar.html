@@ -22,7 +22,7 @@
                 <div class="mynav pull-right">
                     <ul>
                         <li sec:authorize="isAuthenticated()"><a href="/business/new">Search</a></li>
-                        <li><a sec:authorize="isAnonymous()" href="/login">Login</a></li>
+                        <li sec:authorize="isAnonymous()"><a href="/login">Login</a></li>
                         <li sec:authorize="isAuthenticated()" id="logoutButton"><a href="#">Logout</a></li>
                     </ul>
                 </div>
