@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 <head>
     <meta charset="UTF-8"/>
@@ -8,26 +8,28 @@
 </head>
 <body>
 <div class="wrapper">
-<nav th:fragment="navbar" class="navbar navbar-transparent navbar-inverse animated slideInDown">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#" id="brand">Tryst</a>
-
-                    <div class="mynav pull-right">
-                        <ul>
-                            <li><a href="">Search</a></li>
-                            <li><a href="">Login</a></li>
-                        </ul>
-                    </div>
+    <nav th:fragment="navbar" class="navbar navbar-transparent navbar-inverse animated slideInDown">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                    <a class="navbar-brand" href="/" id="brand">Tryst</a>
+                <div class="mynav pull-right">
+                    <ul>
+                        <li sec:authorize="isAuthenticated()"><a href="/business/new">Search</a></li>
+                        <li><a sec:authorize="isAnonymous()" href="/login">Login</a></li>
+                        <li sec:authorize="isAuthenticated()" id="logoutButton"><a href="#">Logout</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
+        <form id="logoutForm" th:action="@{/logout}" method="post"></form>
     </nav>
-    </div>
+</div>
 </body>
 </html>

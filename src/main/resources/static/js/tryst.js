@@ -29,3 +29,7 @@ $("#businessButton").click(function() {
           });
        });
 });
+
+$("#logoutButton").click(function () {
+    $("#logoutForm").submit()
+});
