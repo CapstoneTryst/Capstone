@@ -1,4 +1,5 @@
 var searchResults = "";
+
 $(".date_type").click(function() {
    $.get("/show", {
        location: $("#location").val()
