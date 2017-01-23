@@ -3,23 +3,22 @@
 <head th:replace="fragments/header :: header(${'Add A Business'})">
     <!--Partial Header from fragments/header.html-->
     <link rel="stylesheet" href="../static/css/bootstrap.css"/>
-    <link rel="stylesheet" href="../static/css/landing.css" />
+    <link rel="stylesheet" href="../static/css/landing.css"/>
     <link rel="stylesheet" href="../static/css/animate.css"/>
 </head>
 <body class="gradient">
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <div class="container">
 
-    <input type="text" class="form-control transparent-input" id="businessTerm" placeholder="Enter the name of the business" />
-    <input type="text" class="form-control transparent-input" id="businessLocation" placeholder="Enter the location of the business" />
+    <input type="text" class="form-control transparent-input" id="businessTerm"
+           placeholder="Enter the name of the business"/>
+    <input type="text" class="form-control transparent-input" id="businessLocation"
+           placeholder="Enter the location of the business"/>
 
     <button type="button" id="businessButton">Search for business</button>
 
 
-
-
-</div>
-<div class="container" id="businessResults">
+    <div class="container" id="businessResults"></div>
 
 </div>
 <div th:replace="fragments/footer :: footer"></div>
