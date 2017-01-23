@@ -81,12 +81,6 @@ public class UserController extends BaseController {
         return toBeRated;
     }
 
-    @GetMapping("/test")
-    public @ResponseBody TrystRanking test() {
-        System.out.println(rankingsDao.findOne(17L));
-        return rankingsDao.findOne(17L);
-    }
-
     @GetMapping("/user/rate")
     public String showRatePage(Model model) {
         return "user_rate_page";
