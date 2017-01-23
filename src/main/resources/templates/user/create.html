@@ -17,25 +17,25 @@
         <div class="form-group">
             <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-danger"></p>
             <label for="email">Email</label>
-            <input class="form-control" id="email" name="email" th:field="*{email}" type="text" placeholder="Please enter a valid Email"
+            <input class="form-control transparent-input" id="email" name="email" th:field="*{email}" type="text" placeholder="Please enter a valid Email"
                    autofocus="autofocus" />
         </div>
 
         <div class="form-group">
             <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="alert alert-danger"></p>
             <label for="username">Username</label>
-            <input class="form-control" id="username" name="username" th:field="*{username}" type="text" placeholder="Username" />
+            <input class="form-control transparent-input" id="username" name="username" th:field="*{username}" type="text" placeholder="Username" />
         </div>
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input class="form-control" id="password" name="password" th:field="*{password}" type="password" placeholder="Password" />
+            <input class="form-control transparent-input" id="password" name="password" th:field="*{password}" type="password" placeholder="Password" />
             <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="alert alert-danger"></p>
         </div>
 
         <div class="form-group">
             <label for="homeZip">Zip Code</label>
-            <input class="form-control" id="homeZip" name="homeZip" th:field="*{homeZip}" type="text" placeholder="Zip Code" />
+            <input class="form-control transparent-input" id="homeZip" name="homeZip" th:field="*{homeZip}" type="text" placeholder="Zip Code" />
             <!--<p th:if="${#fields.hasErrors('homeZip')}" th:errors="*{homeZip}" class="alert alert-danger"></p>-->
         </div>
 
