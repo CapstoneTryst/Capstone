@@ -27,7 +27,9 @@ $("#businessButton").click(function() {
        .done(function(data) {
            searchResults = "";
           $.each(data, function(index, element) {
-            searchResults +=("<h1>" + element.name + "</h1><a href='/business/new/" + element.id + "'>Add to Database</a>")
+            searchResults +=("<h1>" + element.name + "</h1><form method='post' action='/business/new/" + element.id +
+            "'><input name='_csrf' type='hidden' value='" + $("#csrf-token").attr("content") + "'>" +
+            "<button type='submit'>Add to The Database</button></form>")
           });
            $("#businessResults").html(searchResults);
        });

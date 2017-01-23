@@ -12,7 +12,7 @@
 
     <hr/>
 
-    <form th:action="@{/create}" th:method="POST" th:object="${user}">
+    <form th:action="@{/user/create}" th:method="POST" th:object="${user}">
 
         <div class="form-group">
             <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-danger"></p>
