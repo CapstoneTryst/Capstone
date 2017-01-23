@@ -23,7 +23,7 @@ public class MainController {
 
     @GetMapping("/show")
     public @ResponseBody JSONObject showPage(@RequestParam(name = "location") String location, Model model) {
-        JSONArray allBusinesses = yelpAPI.queryAPI("", location);
+        JSONArray allBusinesses = yelpAPI.queryAPIByLocation("", location);
         int random = (int) Math.floor(Math.random() * allBusinesses.size());
         return (JSONObject) allBusinesses.get(random);
     }
@@ -35,7 +35,7 @@ public class MainController {
 
     @GetMapping("/business")
     public @ResponseBody JSONArray getSpecificBusinesses(@RequestParam(name= "name") String term, @RequestParam(name = "location") String location, Model model) {
-        JSONArray allBusinesses = yelpAPI.queryAPI(term, location);
+        JSONArray allBusinesses = yelpAPI.queryAPIByLocation(term, location);
         JSONArray topOptions = new JSONArray();
         topOptions.add(allBusinesses.get(0));
         topOptions.add(allBusinesses.get(1));
