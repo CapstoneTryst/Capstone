@@ -12,6 +12,9 @@ import org.scribe.model.Token;
 import org.scribe.model.Verb;
 import org.scribe.oauth.OAuthService;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 public class Yelp {
 
     private static final String API_HOST = "api.yelp.com";
@@ -46,7 +49,12 @@ public class Yelp {
     }
 
     public String searchByBusinessId(String businessID) {
-        OAuthRequest request = createOAuthRequest(BUSINESS_PATH + "/" + businessID);
+        OAuthRequest request = null;
+        try {
+            request = createOAuthRequest(BUSINESS_PATH + "/" + URLEncoder.encode(businessID, "UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         return sendRequestAndGetResponse(request);
     }
 
