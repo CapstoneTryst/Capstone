@@ -58,7 +58,7 @@ public class UserController extends BaseController {
 
         newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
         usersDao.save(newUser);
-        return "redirect:/login";
+        return "redirect:/user/login";
     }
 
     @GetMapping("/user/unrated")
