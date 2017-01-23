@@ -112,3 +112,44 @@ input.transparent-input{
     opacity: 0.25;
     border:none;
 }
+
+
+/*business image*/
+.result-image {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    border-radius: 8px;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+
+.result-image:hover .image {
+    opacity: 0.3;
+}
+
+.result-image:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 3em;
+    padding: 10px 32px;
+}
