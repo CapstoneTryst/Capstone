@@ -3,10 +3,10 @@ package com.codeup.controllers;
 import com.codeup.dao.TrystRankings;
 import com.codeup.models.TrystRanking;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class BusinessController extends BaseController {
@@ -25,4 +25,18 @@ public class BusinessController extends BaseController {
 
         return "redirect:/";
     }
+
+    @PostMapping("/business/positive")
+    @ResponseStatus(value = HttpStatus.OK)
+    public void ratePositive(@RequestParam("category") int category, @RequestParam("businessId") String businessId) {
+        System.out.println(category + " " + businessId);
+
+    }
+
+    @PostMapping("/business/negative")
+    @ResponseStatus(value = HttpStatus.OK)
+    public void rateNegative(@RequestParam("category") int category, @RequestParam("businessId") String businessId) {
+        System.out.println(category + " " + businessId);
+    }
+
 }
