@@ -22,14 +22,14 @@
         You have been logged out.
     </p>
 
-    <form th:action="@{/login}" method="post">
+    <form th:action="@{/user/login}" method="post">
         <div class="form-group">
             <label for="username">Username</label>
-            <input class="form-control transparent-input btn btn-primary-outline" id="username" name="username" type="text" autofocus="autofocus" />
+            <input class="form-control transparent-input" id="username" name="username" type="text" autofocus="autofocus" />
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input class="form-control transparent-input btn btn-primary-outline" id="password" name="password" type="password" />
+            <input class="form-control transparent-input" id="password" name="password" type="password" />
         </div>
         <input type="submit" class="btn btn-primary-outline" value="Log In" />
     </form>
