@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class BusinessController extends BaseController {
 
     @Autowired
-    TrystRankings rankingsDoa;
+    TrystRankings rankingsDao;
 
     @GetMapping("/business/new/{businessId}")
     public String addNewBusiness(@PathVariable String businessId) {
@@ -20,8 +20,7 @@ public class BusinessController extends BaseController {
 
         newRanking.setYelpId(businessId);
         newRanking.setUser(loggedInUser());
-        rankingsDoa.save(newRanking);
-
+        rankingsDao.save(newRanking);
         return "redirect:/";
     }
 }
