@@ -45,11 +45,12 @@ public class BusinessController extends BaseController {
             newTrystRating.setUser(loggedInUser());
 
             rankingsDao.save(newTrystRating);
-        }
+        } else {
 
-        unrankedRating.setRating(1);
-        unrankedRating.setDateCategory(dateCategory);
-        rankingsDao.save(unrankedRating);
+            unrankedRating.setRating(1);
+            unrankedRating.setDateCategory(dateCategory);
+            rankingsDao.save(unrankedRating);
+        }
     }
 
 
@@ -71,11 +72,12 @@ public class BusinessController extends BaseController {
             newTrystRating.setUser(loggedInUser());
 
             rankingsDao.save(newTrystRating);
-        }
+        } else {
 
-        unrankedRating.setRating(-1);
-        unrankedRating.setDateCategory(dateCategory);
-        rankingsDao.save(unrankedRating);
+            unrankedRating.setRating(-1);
+            unrankedRating.setDateCategory(dateCategory);
+            rankingsDao.save(unrankedRating);
+        }
     }
 
 
