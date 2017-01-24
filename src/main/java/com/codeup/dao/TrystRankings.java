@@ -1,5 +1,6 @@
 package com.codeup.dao;
 
+import com.codeup.models.DateCategory;
 import com.codeup.models.TrystRanking;
 import com.codeup.models.User;
 import org.springframework.data.jpa.repository.Query;
@@ -17,6 +18,7 @@ public interface TrystRankings extends CrudRepository<TrystRanking, Long> {
     TrystRanking findByUserIdAndRatingAndYelpId(long userId, int rating, String yelpId);
     TrystRanking findByUserIdAndDateCategoryIdAndYelpId(long userId, long dateCategoryId, String yelpId);
 
-//    List<TrystRanking> findByYelpIdAndCategoryId(String yelpId, long dateCategoryId);
-//    long countByYelpIdAndDateCategoryIdAndRating(String yelpId, long dateCategoryId, int rating);
+    List<TrystRanking> findAllByDateCategory(DateCategory category);
+
+    long countByYelpIdAndDateCategoryIdAndRating(String yelpId, long dateCategoryId, int rating);
 }
