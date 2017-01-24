@@ -1,5 +1,6 @@
 package com.codeup.controllers;
 
+import com.codeup.dao.DateCategories;
 import com.codeup.dao.TrystRankings;
 import com.codeup.models.DateCategory;
 import com.codeup.models.TrystRanking;
@@ -15,6 +16,11 @@ public class BusinessController extends BaseController {
     @Autowired
     private TrystRankings rankingsDao;
 
+    @Autowired
+    private DateCategories dateCategoriesDao;
+
+
+
     @PostMapping("/business/new/{businessId}")
     public String addNewBusiness(@PathVariable String businessId) {
 
@@ -29,15 +35,21 @@ public class BusinessController extends BaseController {
 
     @PostMapping("/business/positive")
     @ResponseStatus(value = HttpStatus.OK)
-    public void ratePositive(@RequestParam("category") int category, @RequestParam("businessId") String businessId) {
+    public void ratePositive(@RequestParam("category") long category, @RequestParam("businessId") String businessId) {
         System.out.println(category + " " + businessId);
+        System.out.println(rankingsDao.findByUserIdAndRatingAndYelpId(loggedInUser().getId(), 0, businessId));
 
-        TrystRanking unrankedRating = rankingsDao.findByUserIdAndRatingAndYelpId(loggedInUser(), 0, businessId);
+        TrystRanking unrankedRating = rankingsDao.findByUserIdAndRatingAndYelpId(loggedInUser().getId(), 0, businessId);
 
-            DateCategory dateCategory = new DateCategory();
-            dateCategory.setId(category);
+//        if (unrankedRating == null){
+//            unrankedRating = rankingsDao.findByUserIdAndDateCategoryIdAndYelpId(loggedInUser().getId(), category, businessId);
+//        }
 
-        if (unrankedRating.getDateCategory() == null){
+        DateCategory dateCategory = dateCategoriesDao.findOne(category);
+        System.out.println(dateCategory);
+
+        if (unrankedRating == null){
+            System.out.println("get unrankedRating == null");
 
             TrystRanking newTrystRating = new TrystRanking();
 
@@ -48,6 +60,7 @@ public class BusinessController extends BaseController {
 
             rankingsDao.save(newTrystRating);
         } else {
+            System.out.println("get unrankedRating != null");
 
             unrankedRating.setRating(1);
             unrankedRating.setDateCategory(dateCategory);
@@ -57,15 +70,17 @@ public class BusinessController extends BaseController {
 
     @PostMapping("/business/negative")
     @ResponseStatus(value = HttpStatus.OK)
-    public void rateNegative(@RequestParam("category") int category, @RequestParam("businessId") String businessId) {
+    public void rateNegative(@RequestParam("category") long category, @RequestParam("businessId") String businessId) {
         System.out.println(category + " " + businessId);
+        System.out.println(rankingsDao.findByUserIdAndRatingAndYelpId(loggedInUser().getId(), 0, businessId));
 
-        TrystRanking unrankedRating = rankingsDao.findByUserIdAndRatingAndYelpId(loggedInUser(), 0, businessId);
+        TrystRanking unrankedRating = rankingsDao.findByUserIdAndRatingAndYelpId(loggedInUser().getId(), 0, businessId);
+        DateCategory dateCategory = dateCategoriesDao.findOne(category);
 
-        DateCategory dateCategory = new DateCategory();
-        dateCategory.setId(category);
+        System.out.println(dateCategory);
 
-        if (unrankedRating.getDateCategory() == null){
+        if (unrankedRating == null) {
+            System.out.println("get unrankedRating == null");
 
             TrystRanking newTrystRating = new TrystRanking();
 
@@ -76,11 +91,11 @@ public class BusinessController extends BaseController {
 
             rankingsDao.save(newTrystRating);
         } else {
+            System.out.println("get unrankedRating != null");
 
             unrankedRating.setRating(-1);
             unrankedRating.setDateCategory(dateCategory);
             rankingsDao.save(unrankedRating);
         }
     }
-
 }
