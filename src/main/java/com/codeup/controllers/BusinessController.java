@@ -5,6 +5,7 @@ import com.codeup.models.DateCategory;
 import com.codeup.models.TrystRanking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +29,10 @@ public class BusinessController extends BaseController {
 
     @PostMapping("/business/positive")
     @ResponseStatus(value = HttpStatus.OK)
-    public void ratePositive(@RequestParam("category") long category, @RequestParam("businessId") String businessId) {
+    public void ratePositive(@RequestParam("category") int category, @RequestParam("businessId") String businessId) {
+
+        System.out.println(category + " " + businessId);
+
 
         TrystRanking unrankedRating = rankingsDao.findByUserIdAndRatingAndYelpId(loggedInUser(), 0, businessId);
 
@@ -55,7 +59,10 @@ public class BusinessController extends BaseController {
 
 
     @PostMapping("/business/negative")
+    @ResponseStatus(value = HttpStatus.OK)
     public void rateNegative(@RequestParam("category") int category, @RequestParam("businessId") String businessId) {
+
+        System.out.println(category + " " + businessId);
 
         TrystRanking unrankedRating = rankingsDao.findByUserIdAndRatingAndYelpId(loggedInUser(), 0, businessId);
 
