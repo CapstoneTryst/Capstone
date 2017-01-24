@@ -13,3 +13,7 @@ Also includes a link to Yelp's review page of the Tryst recommended location for
 3. Tryst only displays one recommendation at a time. - This helps eliminate the the frustration of making choice. If the user is unhappy with the recommendation they can ask for another suggestion. It will return another suggestion from the array of JSON objects that came from the Yelp API.
 4. Users can add "locations/business" to our database. - After a user has created a account. They can search for a specific location and add it to our database. They can also add recommendations for what kind of "date" that "business/location" is good for. 
 5. If a location is searched that has no "location/business" reviews in the Tryst database. Tryst will randomly recommend a top Yelp.com rated "restaurant/location".
+
+## Future Features 
+
+1.
