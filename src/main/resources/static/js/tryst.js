@@ -11,7 +11,7 @@ $(".date_type").click(function() {
            $("#businessPhone").html(data.display_phone);
            $("#ratingImageUrl").attr("src", data.rating_img_url_large);
            $("#businessAddress").html(data.location.address[0] + "| " + data.location.city + ", " + data.location.state_code + " " + data.location.postal_code);
-           $("#businessImage").attr("src", data.image_url.substring(0, data.image_url.length - 6) + "ls.jpg");
+           $("#businessImage").attr("src", data.image_url.substring(0, data.image_url.length - 6) + "o.jpg");
            $("#yelpUrl").attr("href", data.url).html("See More about \"" + data.name + "\" on Yelp.com");
 
            $("#showPage").css({"display": "inline"});
