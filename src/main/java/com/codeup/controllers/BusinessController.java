@@ -54,8 +54,7 @@ public class BusinessController extends BaseController {
             rankingsDao.save(unrankedRating);
         }
     }
-
-
+    
     @PostMapping("/business/negative")
     @ResponseStatus(value = HttpStatus.OK)
     public void rateNegative(@RequestParam("category") int category, @RequestParam("businessId") String businessId) {
@@ -82,8 +81,5 @@ public class BusinessController extends BaseController {
             unrankedRating.setDateCategory(dateCategory);
             rankingsDao.save(unrankedRating);
         }
-
     }
-
-
 }
