@@ -14,6 +14,6 @@ public interface TrystRankings extends CrudRepository<TrystRanking, Long> {
 
     List<TrystRanking> findByUser(User user);
 
-    TrystRanking findByUserIdAndRatingAndYelpId(User user, int rating, String yelpId);
-
+    TrystRanking findByUserIdAndRatingAndYelpId(long userId, int rating, String yelpId);
+    TrystRanking findByUserIdAndDateCategoryIdAndYelpId(long userId, long dateCategoryId, String yelpId);
 }
