@@ -15,7 +15,7 @@ import java.net.URLEncoder;
 public class Yelp {
 
     private static final String API_HOST = "api.yelp.com";
-    private static final int SEARCH_LIMIT = 3;
+    private static final int SEARCH_LIMIT = 40;
     private static final String SEARCH_PATH = "/v2/search";
     private static final String BUSINESS_PATH = "/v2/business";
 
