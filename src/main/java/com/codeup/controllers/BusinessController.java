@@ -53,9 +53,6 @@ public class BusinessController extends BaseController {
             unrankedRating.setDateCategory(dateCategory);
             rankingsDao.save(unrankedRating);
         }
-
-        
-
     }
 
     @PostMapping("/business/negative")
@@ -84,9 +81,6 @@ public class BusinessController extends BaseController {
             unrankedRating.setDateCategory(dateCategory);
             rankingsDao.save(unrankedRating);
         }
-
-
-
     }
 
 }
