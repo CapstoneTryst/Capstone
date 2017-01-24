@@ -81,7 +81,7 @@ h1 {
     margin: 0 auto;
 }
 
-.btn-primary-outline {
+.btn {
     background-color: transparent;
     border-color: #ccc;
 }
@@ -162,27 +162,48 @@ input.transparent-input{
     border-radius: 35px;
 }
 
-.glyphicon-heart{
-    float: left;
+.wrapper {
+    display:inline-block;
+    height: 210px;
+    vertical-align: top;
+}
+.image-wrapper {
+    display:inline-block;
+    vertical-align: top;
+    height: 200px;
+    padding: 5px;
+}
+.button-wrapper {
+    display:inline-block;
+    vertical-align: top;
+    height: 200px;
+    padding: 5px;
 }
 
-.glyphicon-remove{
-    float: right;
-}
+/*.glyphicon-heart{*/
+    /*float: left;*/
+/*}*/
 
-
-
-
-/*footer*/
-.footer {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0);
-    width: auto;
-    height: auto;
-    padding: 10px;
-    margin-left: 43%;
-}
-
-/*.social{*/
+/*.glyphicon-remove{*/
     /*float: right;*/
 /*}*/
+
+/*user rate*/
+.d-inline{
+    text-align: center;
+    float: left;
+    margin-left: 15%;
+    padding: 7px;
+}
+
+
+.footer {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0;
+}
+.text-muted {
+    margin: 20px 0;
+    color: black;
+}
+

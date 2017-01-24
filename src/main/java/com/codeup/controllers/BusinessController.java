@@ -19,8 +19,6 @@ public class BusinessController extends BaseController {
     @Autowired
     private DateCategories dateCategoriesDao;
 
-
-
     @PostMapping("/business/new/{businessId}")
     public String addNewBusiness(@PathVariable String businessId) {
 
