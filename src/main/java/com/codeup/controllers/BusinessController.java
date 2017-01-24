@@ -41,9 +41,9 @@ public class BusinessController extends BaseController {
 
         TrystRanking unrankedRating = rankingsDao.findByUserIdAndRatingAndYelpId(loggedInUser().getId(), 0, businessId);
 
-//        if (unrankedRating == null){
-//            unrankedRating = rankingsDao.findByUserIdAndDateCategoryIdAndYelpId(loggedInUser().getId(), category, businessId);
-//        }
+        if (unrankedRating == null){
+            unrankedRating = rankingsDao.findByUserIdAndDateCategoryIdAndYelpId(loggedInUser().getId(), category, businessId);
+        }
 
         DateCategory dateCategory = dateCategoriesDao.findOne(category);
         System.out.println(dateCategory);
@@ -75,8 +75,12 @@ public class BusinessController extends BaseController {
         System.out.println(rankingsDao.findByUserIdAndRatingAndYelpId(loggedInUser().getId(), 0, businessId));
 
         TrystRanking unrankedRating = rankingsDao.findByUserIdAndRatingAndYelpId(loggedInUser().getId(), 0, businessId);
-        DateCategory dateCategory = dateCategoriesDao.findOne(category);
 
+        if (unrankedRating == null){
+            unrankedRating = rankingsDao.findByUserIdAndDateCategoryIdAndYelpId(loggedInUser().getId(), category, businessId);
+        }
+
+        DateCategory dateCategory = dateCategoriesDao.findOne(category);
         System.out.println(dateCategory);
 
         if (unrankedRating == null) {
