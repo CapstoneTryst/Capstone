@@ -2,7 +2,8 @@ var searchResults = "";
 
 $(".date_type").click(function() {
    $.get("/show", {
-       location: $("#location").val()
+       location: $("#location").val(),
+       category: $(this).data("db-id")
    })
        .done(function(data) {
            $("#businessTitle").html(data.name);
