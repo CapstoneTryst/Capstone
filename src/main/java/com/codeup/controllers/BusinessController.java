@@ -82,6 +82,7 @@ public class BusinessController extends BaseController {
             unrankedRating.setDateCategory(dateCategory);
             rankingsDao.save(unrankedRating);
         }
+
     }
 
 
