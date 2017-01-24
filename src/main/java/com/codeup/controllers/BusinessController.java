@@ -30,9 +30,7 @@ public class BusinessController extends BaseController {
     @PostMapping("/business/positive")
     @ResponseStatus(value = HttpStatus.OK)
     public void ratePositive(@RequestParam("category") int category, @RequestParam("businessId") String businessId) {
-
         System.out.println(category + " " + businessId);
-
 
         TrystRanking unrankedRating = rankingsDao.findByUserIdAndRatingAndYelpId(loggedInUser(), 0, businessId);
 
@@ -61,7 +59,6 @@ public class BusinessController extends BaseController {
     @PostMapping("/business/negative")
     @ResponseStatus(value = HttpStatus.OK)
     public void rateNegative(@RequestParam("category") int category, @RequestParam("businessId") String businessId) {
-
         System.out.println(category + " " + businessId);
 
         TrystRanking unrankedRating = rankingsDao.findByUserIdAndRatingAndYelpId(loggedInUser(), 0, businessId);
