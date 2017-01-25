@@ -1,11 +1,12 @@
 (function() {
+    var categories = ["Casual First Date", "Anniversary", "Outdoors", "Sight Seeing", "Romantic Date", "Relaxing Date", "First Date IRL", "Artsy", "Live Music", "No $$ No Problem", "Classy"];
     var ratingString = "";
     $.get("/user/unrated")
         .done(function (data) {
             ratingString = "";
             $.each(data, function (index, element) {
                 ratingString += "<h1>" + element.name + "</h1>";
-                for (var i = 1; i <= 10; i++) {
+                for (var i = 1; i <= 11; i++) {
                     ratingString +=
                         "<div class='d-inline'>"
                         + "<form class='stopform' method='post' action='/business/positive'>"
@@ -14,7 +15,7 @@
                         + "<input type='hidden' name='businessId' value='" + element.id + "'>"
                         + "<button class='submit-positive btn' type='submit'>+</button>"
                         + "</form>"
-                        + "<p>category " + i + "</p>"
+                        + "<p>" + categories[i - 1] + "</p>"
                         + "<form class='stopform' method='post' action='/business/negative'>"
                         + "<input type='hidden' name='_csrf' value='" + $("#csrf-token").attr("content") + "'>"
                         + "<input type='hidden' name='category' value='" + i + "'>"
