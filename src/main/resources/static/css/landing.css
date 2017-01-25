@@ -10,6 +10,10 @@ html, body {
     height: 100%;
 }
 
+input {
+    font-family: sans-serif;
+}
+
 
 .container > .categories {
     display: table-cell;
@@ -107,14 +111,26 @@ input.transparent-input {
 }
 
 .transparent-input {
-    opacity: 0.25;
+    /*background-color: rgba(255,255,255,0.2);*/
+    opacity: .8;
     border:none;
 }
 
-input.transparent-input{
-    opacity: 0.25;
-    border:none;
-}
+/*.transparent-input::-webkit-input-placeholder*/
+/*{*/
+    /*color: rgba(0,0,0,1.0);*/
+/*}*/
+
+/*.transparent-input::-moz-placeholder*/
+/*{*/
+    /*color: rgba(0,0,0,1.0);*/
+/*}*/
+
+/*.transparent-input:-ms-input-placeholder*/
+/*{*/
+    /*color: rgba(0,0,0,1.0);*/
+/*}*/
+
 
 
 /*business image*/
