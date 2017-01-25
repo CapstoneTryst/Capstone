@@ -206,11 +206,10 @@ input.transparent-input {
     overflow: auto;
     white-space: nowrap;
     margin:0px auto;
-    border:1px red solid;
+    /*border:1px red solid;*/
 }
 
 .footer {
-    position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
