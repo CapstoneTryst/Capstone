@@ -5,11 +5,12 @@
         .done(function (data) {
             ratingString = "";
             $.each(data, function (index, element) {
-                ratingString += "<h1>" + element.name + "</h1>";
+                ratingString += "<div><div class='col-sm-12'><h2 class='col-sm-4'>" + element.name + "</h2>" +
+                    "<a id='yelpUrl' href='" + element.url + "'class='col-sm-4' target='_blank' style='margin-top: 35px' rel='noopener'>See More about " + element.name + " on Yelp!</a></div>" +
+                    "<table class='table'><tr>";
                 for (var i = 1; i <= 11; i++) {
                     ratingString +=
-                        "<div class='d-inline'>"
-                        + "<form class='stopform' method='post' action='/business/positive'>"
+                        "<td class='text-center'><form class='stopform' method='post' action='/business/positive'>"
                         + "<input type='hidden' name='_csrf' value='" + $("#csrf-token").attr("content") + "'>"
                         + "<input type='hidden' name='category' value='" + i + "'>"
                         + "<input type='hidden' name='businessId' value='" + element.id + "'>"
@@ -21,9 +22,9 @@
                         + "<input type='hidden' name='category' value='" + i + "'>"
                         + "<input type='hidden' name='businessId' value='" + element.id + "'>"
                         + "<button class='submit-negative btn' type='submit'>-</button>"
-                        + "</form>"
-                        + "</div>"
+                        + "</form></td>"
                 }
+                ratingString += "</tr></table></div>"
 
             });
             $("#businesses-to-rate").html(ratingString);
