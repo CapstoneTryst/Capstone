@@ -28,7 +28,7 @@ public class BusinessController extends BaseController {
         newRanking.setUser(loggedInUser());
         rankingsDao.save(newRanking);
 
-        return "redirect:/";
+        return "redirect:/user/rate";
     }
 
     @PostMapping("/business/positive")
