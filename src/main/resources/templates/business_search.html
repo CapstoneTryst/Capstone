@@ -8,25 +8,24 @@
 </head>
 <body class="gradient">
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<div class="container col-md-6 col-md-offset-3">
-
-    <h1>Lets up Load a Spot!</h1>
-
-    <hr/>
-
-    <div class="form-group">
-        <label for="businessLocation">Location</label>
-        <input type="text" class="form-control transparent-input" id="businessLocation" placeholder="Enter the zip code or City, State"/>
+<div class="container">
+    <div class="row">
+        <div class="form col-md-6 col-md-offset-3">
+            <h2>Search for a date spot</h2>
+            <div class="form-group">
+                <input type="text" class="form-control transparent-input" id="businessTerm"
+                       placeholder="Name of the business"/>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control transparent-input" id="businessLocation"
+                       placeholder="Address or zipcode"/>
+            </div>
+            <button type="button" class="btn" id="businessButton">Search for business</button>
+        </div>
     </div>
-
-    <div class="form-group">
-        <label for="businessTerm">Business Name</label>
-        <input type="text" class="form-control transparent-input" id="businessTerm" placeholder="Enter the name of the business you trying to add"/>
-    </div>
-
-    <button type="button" id="businessButton" class="btn btn-submit">Search for business</button>
-
-    <div class="" id="businessResults"></div>
+        <div class="row">
+        <div id="businessResults"></div>
+        </div>
 
 </div>
 <div th:replace="fragments/footer :: footer"></div>

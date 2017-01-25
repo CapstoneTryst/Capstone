@@ -11,6 +11,7 @@
 <body class="gradient">
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <div class="container animated fadeIn" id="content">
+    <div class="row">
     <div class="col-md-6 col-md-offset-3 text-center">
     <h1 id="title">Tryst</h1>
         <input type="text" id="location" class="form-control transparent-input" placeholder="enter your location"/>
@@ -51,10 +52,17 @@
             <!--</div>-->
         </div>
     </div>
-<div class="container wrapper" id="showPage" style="display: none;">
-    <!--<button type="button" class=" btn-warning btn-circle btn-xl"><span class="glyphicon"></span></button>-->
-    <div class="col-md-6 col-md-offset-3 text-center result-image">
+    </div>
+    <div class="row">
+<div class="wrapper test" id="showPage" style="display: none;">
+    <div class="col-md-3" style="margin: auto;">
+        <button >test</button>
+   </div>
+    <div class="col-md-6 text-center result-image">
 
+        <div style='float: right;'>
+            <button>test</button>
+        </div>
         <img id="businessImage" alt="200x200" class="image second" style="width:100%" src="" />
         <div class="middle">
             <h1 id="businessTitle"></h1>
@@ -67,15 +75,9 @@
             </div>
     </div>
 </div>
+    </div>
 </div>
 
-<script>
-    $('.button').click(function() {
-        $('html,body').animate({
-                    scrollTop: $('.second').offset().top},
-                'slow');
-    });
-</script>
 
 <!-- jQuery & jsBootstrap CDN from fragments/footer.html-->
 <div th:replace="fragments/footer :: footer"></div>

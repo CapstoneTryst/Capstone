@@ -6,8 +6,13 @@ body{
     font-family: 'ostrich', sans-serif;
 }
 
-html, body {
-    height: 100%;
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+input {
+    font-family: sans-serif;
 }
 
 
@@ -30,13 +35,6 @@ html, body {
 
 }
 
-.navbar-header #brand{
-    font-family: 'ostrich', sans-serif;
-    color: black;
-    font-size: 20pt;
-    margin-top: 20px;
-}
-
 .mynav li
 {
     list-style: none;
@@ -57,6 +55,16 @@ html, body {
 .mynav li a:hover{
     text-decoration: none;
 }
+
+#heart img{
+    position:relative;
+    left:0;
+    right:0;
+    padding-bottom: 5px;
+    height: 50px;
+    width: 50px;
+}
+
 
 #content{
     display: table;
@@ -104,14 +112,26 @@ input.transparent-input {
 }
 
 .transparent-input {
-    opacity: 0.25;
+    /*background-color: rgba(255,255,255,0.2);*/
+    opacity: .8;
     border:none;
 }
 
-input.transparent-input{
-    opacity: 0.25;
-    border:none;
-}
+/*.transparent-input::-webkit-input-placeholder*/
+/*{*/
+    /*color: rgba(0,0,0,1.0);*/
+/*}*/
+
+/*.transparent-input::-moz-placeholder*/
+/*{*/
+    /*color: rgba(0,0,0,1.0);*/
+/*}*/
+
+/*.transparent-input:-ms-input-placeholder*/
+/*{*/
+    /*color: rgba(0,0,0,1.0);*/
+/*}*/
+
 
 
 /*business image*/
@@ -153,14 +173,6 @@ input.transparent-input{
     font-size: 3em;
     padding: 10px 32px;
 }
-.btn-circle.btn-xl {
-    width: 70px;
-    height: 70px;
-    padding: 10px 16px;
-    font-size: 24px;
-    line-height: 1.33;
-    border-radius: 35px;
-}
 
 .wrapper {
     display:inline-block;
@@ -179,14 +191,8 @@ input.transparent-input{
     height: 200px;
     padding: 5px;
 }
+/*love or retry*/
 
-/*.glyphicon-heart{*/
-    /*float: left;*/
-/*}*/
-
-/*.glyphicon-remove{*/
-    /*float: right;*/
-/*}*/
 
 /*user rate*/
 .d-inline{
@@ -195,15 +201,22 @@ input.transparent-input{
     margin-left: 15%;
     padding: 7px;
 }
-
+.test {
+    width:200px;
+    /*display:inline-block;*/
+    overflow: auto;
+    white-space: nowrap;
+    margin:0 auto;
+}
 
 .footer {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin: 0;
+    padding: 1rem;
+    text-align: center;
 }
+
 .text-muted {
     margin: 20px 0;
-    color: black;
+    color: black
 }
+
 
