@@ -46,7 +46,8 @@ public class MainController {
 
     @GetMapping("/show")
     public @ResponseBody JSONObject showPage(@RequestParam(name = "location") String location, @RequestParam(name = "category") long category) {
-        JSONArray allInArea = yelpAPI.queryAPIByLocation("", location);
+        String searchTerm = getSearchTerm(category);
+        JSONArray allInArea = yelpAPI.queryAPIByLocation(searchTerm, location);
         List<TrystRanking> allEntrysForSelectedCategory = rankingsDao.findAllByDateCategory(categoriesDao.findOne(category));
         JSONObject selectedResult;
         JSONArray allInAreaAlsoInDatabase = new JSONArray();
@@ -128,4 +129,23 @@ public class MainController {
 //        model.addAttribute("suggestion", suggestion);
 //        return "show";
 //    }
+
+    private String getSearchTerm(long category) {
+        String searchTerm = "";
+        int categoryInt = (int) category;
+        switch (categoryInt) {
+            case 3: searchTerm = "outdoors";
+                break;
+            case 4: searchTerm = "sight seeing";
+                break;
+            case 8: searchTerm = "art";
+                break;
+            case 9: searchTerm = "live music";
+                break;
+            default: searchTerm = "";
+                break;
+        }
+
+        return searchTerm;
+    }
 }
