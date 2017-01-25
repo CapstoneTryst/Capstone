@@ -34,13 +34,6 @@ input {
 
 }
 
-.navbar-header #brand{
-    font-family: 'ostrich', sans-serif;
-    color: black;
-    font-size: 20pt;
-    margin-top: 20px;
-}
-
 .mynav li
 {
     list-style: none;
@@ -61,6 +54,16 @@ input {
 .mynav li a:hover{
     text-decoration: none;
 }
+
+#heart img{
+    position:relative;
+    left:0;
+    right:0;
+    margin-bottom: 5px;
+    height: 50px;
+    width: 50px;
+}
+
 
 #content{
     display: table;
@@ -169,14 +172,6 @@ input.transparent-input {
     font-size: 3em;
     padding: 10px 32px;
 }
-.btn-circle.btn-xl {
-    width: 70px;
-    height: 70px;
-    padding: 10px 16px;
-    font-size: 24px;
-    line-height: 1.33;
-    border-radius: 35px;
-}
 
 .wrapper {
     display:inline-block;
@@ -195,14 +190,8 @@ input.transparent-input {
     height: 200px;
     padding: 5px;
 }
+/*love or retry*/
 
-/*.glyphicon-heart{*/
-    /*float: left;*/
-/*}*/
-
-/*.glyphicon-remove{*/
-    /*float: right;*/
-/*}*/
 
 /*user rate*/
 .d-inline{
@@ -211,13 +200,24 @@ input.transparent-input {
     margin-left: 15%;
     padding: 7px;
 }
-
+.test {
+    width:200px;
+    display:inline-block;
+    overflow: auto;
+    white-space: nowrap;
+    margin:0px auto;
+    border:1px red solid;
+}
 
 .footer {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
 }
+
 .text-muted {
     margin: 20px 0;
     color: black;

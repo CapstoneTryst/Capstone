@@ -36,4 +36,4 @@ INSERT INTO tryst_rankings (rating, yelp_id, date_category_id, user_id)
         (1, 'la-panaderia-san-antonio', 7, 1),
         (1, 'theory-coffee-company-san-antonio', 7, 1),
         (1, 'cappyccinos-san-antonio', 7, 1),
-        (1, 'flemings-prime-steakhouse-and-wine-bar-san-antonio', 2, 1);
+        (1, 'flemings-prime-steakhouse-and-wine-bar-san-antonio', 2);
