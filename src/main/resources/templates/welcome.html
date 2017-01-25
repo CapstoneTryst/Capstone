@@ -11,6 +11,7 @@
 <body class="gradient">
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <div class="container animated fadeIn" id="content">
+    <div class="row">
     <div class="col-md-6 col-md-offset-3 text-center">
     <h1 id="title">Tryst</h1>
         <input type="text" id="location" class="form-control transparent-input" placeholder="enter your location"/>
@@ -51,11 +52,14 @@
             <!--</div>-->
         </div>
     </div>
-<div class="container wrapper test" id="showPage" style="display: none;">
-    <div class="col-md-6 col-md-offset-3 text-center result-image">
-        <div style='float: left;'>
-            <button>test</button>
-        </div>
+    </div>
+    <div class="row">
+<div class="wrapper test" id="showPage" style="display: none;">
+    <div class="col-md-3" style="margin: auto;">
+        <button >test</button>
+   </div>
+    <div class="col-md-6 text-center result-image">
+
         <div style='float: right;'>
             <button>test</button>
         </div>
@@ -71,6 +75,7 @@
             </div>
     </div>
 </div>
+    </div>
 </div>
 
 

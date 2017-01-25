@@ -6,8 +6,9 @@ body{
     font-family: 'ostrich', sans-serif;
 }
 
-html, body {
-    height: 100%;
+html{
+    position: relative;
+    min-height: 100%;
 }
 
 input {
@@ -59,7 +60,7 @@ input {
     position:relative;
     left:0;
     right:0;
-    margin-bottom: 5px;
+    padding-bottom: 5px;
     height: 50px;
     width: 50px;
 }
@@ -202,24 +203,20 @@ input.transparent-input {
 }
 .test {
     width:200px;
-    display:inline-block;
+    /*display:inline-block;*/
     overflow: auto;
     white-space: nowrap;
-    margin:0px auto;
-    border:1px red solid;
+    margin:0 auto;
 }
 
 .footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
     padding: 1rem;
     text-align: center;
 }
 
 .text-muted {
     margin: 20px 0;
-    color: black;
+    color: black
 }
+
 

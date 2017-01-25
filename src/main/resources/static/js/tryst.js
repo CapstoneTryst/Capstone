@@ -32,7 +32,7 @@ $("#businessButton").click(function() {
           $.each(data, function(index, element) {
             searchResults +=("<h1>" + element.name + "</h1><form method='post' action='/business/new/" + element.id +
             "'><input name='_csrf' type='hidden' value='" + $("#csrf-token").attr("content") + "'>" +
-            "<button type='submit'>Rate this spot</button></form>")
+            "<button class='btn' type='submit'>Rate this spot</button></form>")
           });
            $("#businessResults").html(searchResults);
        });
