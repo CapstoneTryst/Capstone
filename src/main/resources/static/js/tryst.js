@@ -15,7 +15,9 @@ $(".date_type").click(function() {
            $("#yelpUrl").attr("href", data.url).html("See More about \"" + data.name + "\" on Yelp.com");
 
            $("#showPage").css({"display": "inline"});
-
+           $('html,body').animate({
+                   scrollTop: $('.second').offset().top},
+               'slow');
            console.log(data);
        });
 });
@@ -30,7 +32,7 @@ $("#businessButton").click(function() {
           $.each(data, function(index, element) {
             searchResults +=("<h1>" + element.name + "</h1><form method='post' action='/business/new/" + element.id +
             "'><input name='_csrf' type='hidden' value='" + $("#csrf-token").attr("content") + "'>" +
-            "<button type='submit'>Add to The Database</button></form>")
+            "<button type='submit'>Rate this spot</button></form>")
           });
            $("#businessResults").html(searchResults);
        });
