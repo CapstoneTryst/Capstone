@@ -21,8 +21,8 @@
                     <a class="navbar-brand" href="/" id="brand">Tryst</a>
                 <div class="mynav pull-right">
                     <ul>
-                        <li sec:authorize="isAuthenticated()"><a href="/user/rate">Profile</a></li>
-                        <li sec:authorize="isAuthenticated()"><a href="/business/new">Search</a></li>
+                        <li sec:authorize="isAuthenticated()"><a href="/user/rate">Rate your spots</a></li>
+                        <li sec:authorize="isAuthenticated()"><a href="/business/new">Add a Spot</a></li>
                         <li sec:authorize="isAnonymous()"><a href="/user/create">Create User</a></li>
                         <li sec:authorize="isAnonymous()"><a href="/user/login">Login</a></li>
                         <li sec:authorize="isAuthenticated()" id="logoutButton"><a href="#">Logout</a></li>
