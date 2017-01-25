@@ -2,8 +2,15 @@
     font-family: "ostrich";
     src: url('../font/OstrichRegular.otf');
 }
+
+@font-face {
+    font-family: "ostrich-filled";
+    src: url('../font/OstrichSans-Black.otf');
+}
+
 body{
-    font-family: 'ostrich', sans-serif;
+    font-family: "ostrich-filled", sans-serif;
+    color: floralwhite;
 }
 
 html{
@@ -50,7 +57,7 @@ input {
 }
 
 .mynav li a{
-    color:black;
+    color:floralwhite;
 }
 .mynav li a:hover{
     text-decoration: none;
@@ -87,11 +94,14 @@ h1 {
     font-size: 7em;
     padding: 10px;
     margin: 0 auto;
+    font-family: 'ostrich', sans-serif;
+    color: black;
 }
 
 .btn {
     background-color: transparent;
     border-color: #ccc;
+    color: floralwhite;
 }
 
 .input-group-addon {
@@ -201,6 +211,8 @@ input.transparent-input {
     margin-left: 15%;
     padding: 7px;
 }
+
+
 .test {
     width:200px;
     /*display:inline-block;*/
