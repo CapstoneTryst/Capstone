@@ -261,10 +261,10 @@ INSERT INTO tryst_rankings (rating, yelp_id, date_category_id, user_id)
         (1, 'majestic-theatre-san-antonio-san-antonio', 8, 1),
         (1, 'majestic-theatre-san-antonio-san-antonio', 9, 1),
         (1, 'majestic-theatre-san-antonio-san-antonio', 11, 1),
-        (1, 'the-aztec-theatre-san-antonio-3', 1, 1);
-        (1, 'the-aztec-theatre-san-antonio-3', 7, 1);
-        (1, 'the-aztec-theatre-san-antonio-3', 8, 1);
-        (1, 'the-aztec-theatre-san-antonio-3', 9, 1);
+        (1, 'the-aztec-theatre-san-antonio-3', 1, 1),
+        (1, 'the-aztec-theatre-san-antonio-3', 7, 1),
+        (1, 'the-aztec-theatre-san-antonio-3', 8, 1),
+        (1, 'the-aztec-theatre-san-antonio-3', 9, 1),
         (1, 'the-aztec-theatre-san-antonio-3', 11, 1);
 
 
