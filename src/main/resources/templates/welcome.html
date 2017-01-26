@@ -12,70 +12,72 @@
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <div class="container animated fadeIn" id="content">
     <div class="row">
-    <div class="col-md-6 col-md-offset-3 text-center">
-    <h1 id="title">Tryst</h1>
-        <input type="text" id="location" class="form-control transparent-input" placeholder="enter your location"/>
-        <div class="row categories">
-            <div th:each="category: ${categories}" class="date_type" th:attr="data-db-id=${category.id}">
-                <button type="submit" class="btn" th:text="${category.dateType}"></button>
-            </div>
-            <!--<div class="date_type" id="casual_first_date">-->
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <h1 id="title">Tryst</h1>
+            <h4 class="center" style="color: #292929">Welcome to Tryst a place to help you find the right
+                spot to take a date. <br/>Tryst will only display one suggestion at a time limiting the hassle of making
+                a choice. Enter your location and let Tryst do the work!</h4>
+            <input type="text" id="location" class="form-control transparent-input" placeholder="enter your location"/>
+            <div class="row categories">
+                <div th:each="category: ${categories}" class="date_type" th:attr="data-db-id=${category.id}">
+                    <button type="submit" class="btn" th:text="${category.dateType}"></button>
+                </div>
+                <!--<div class="date_type" id="casual_first_date">-->
                 <!--<button type="submit" class="btn btn-primary-outline">Casual First Date</button>-->
-            <!--</div>-->
+                <!--</div>-->
 
-            <!--<div class="date_type" th:attr="data-db-id=${category.id}" id="anniversary">-->
+                <!--<div class="date_type" th:attr="data-db-id=${category.id}" id="anniversary">-->
                 <!--<button type="submit" th:text="${category.name}" class="btn btn-primary-outline">Anniversary</button>-->
-            <!--</div>-->
-            <!--<div class="date_type" id="outdoors">-->
+                <!--</div>-->
+                <!--<div class="date_type" id="outdoors">-->
                 <!--<button type="submit" class="btn btn-primary-outline">Outdoors</button>-->
-            <!--</div>-->
-            <!--<div class="date_type" id="sight_seeing">-->
+                <!--</div>-->
+                <!--<div class="date_type" id="sight_seeing">-->
                 <!--<button type="submit" class="btn btn-primary-outline">Sight Seeing</button>-->
-            <!--</div>-->
-            <!--<div class="date_type" id="romantic_date">-->
+                <!--</div>-->
+                <!--<div class="date_type" id="romantic_date">-->
                 <!--<button type="submit" class="btn btn-primary-outline">Romantic Date</button>-->
-            <!--</div>-->
-            <!--<div class="date_type" id="relaxing_date">-->
+                <!--</div>-->
+                <!--<div class="date_type" id="relaxing_date">-->
                 <!--<button type="submit" class="btn btn-primary-outline">Relaxing Date</button>-->
-            <!--</div>-->
-            <!--<div class="date_type" id="online_meetup">-->
+                <!--</div>-->
+                <!--<div class="date_type" id="online_meetup">-->
                 <!--<button type="submit" class="btn btn-primary-outline">First Date IRL</button>-->
-            <!--</div>-->
-            <!--<div class="date_type" id="artsy_date">-->
+                <!--</div>-->
+                <!--<div class="date_type" id="artsy_date">-->
                 <!--<button type="submit" class="btn btn-primary-outline">Artsy</button>-->
-            <!--</div>-->
-            <!--<div class="date_type" id="Live_Music">-->
+                <!--</div>-->
+                <!--<div class="date_type" id="Live_Music">-->
                 <!--<button type="submit" class="btn btn-primary-outline">Live Music</button>-->
-            <!--</div>-->
-            <!--<div class="date_type" id="No_Money_No_Problem">-->
+                <!--</div>-->
+                <!--<div class="date_type" id="No_Money_No_Problem">-->
                 <!--<button type="submit" class="btn btn-primary-outline">No $$ No Problem</button>-->
-            <!--</div>-->
+                <!--</div>-->
+            </div>
         </div>
     </div>
-    </div>
     <div class="row">
-<div class="row wrapper test" id="showPage" style="display: none;">
-    <div class="select-place-to-go col-md-3 love-hate">
-        <button class="btn btn-block btn-default">Love it!</button>
-   </div>
-    <div class="col-md-6 text-center result-image">
-
-
-        <img id="businessImage" alt="200x200" class="image second" style="width:100%" src="" />
-        <div class="middle">
-            <h1 id="businessTitle"></h1>
-            <img id="ratingImageUrl" src=""/>
-            <p id="reviewCount"></p>
-
-            <p id="businessPhone"></p>
-            <p id="businessAddress"></p>
-            <a id="yelpUrl" href="#" target="_blank" rel="noopener">See More about this restaurant on Yelp!</a>
+        <div class="row wrapper test" id="showPage" style="display: none;">
+            <div class=" select-place-to-go col-md-3 love-hate">
+                <button class="btn btn-block btn-default">Love it!</button>
             </div>
-    </div>
-    <div id="try-again" class="col-md-3 date_type love-hate">
-        <button class="btn btn-block btn-default">Try again</button>
-    </div>
-</div>
+            <div class="col-md-6 text-center result-image">
+
+                <img id="businessImage" alt="200x200" class="image second" style="width:100%" src=""/>
+                <div class="middle">
+                    <h1 id="businessTitle"></h1>
+                    <img id="ratingImageUrl" src=""/>
+                    <p id="reviewCount"></p>
+
+                    <p id="businessPhone"></p>
+                    <p id="businessAddress"></p>
+                    <a id="yelpUrl" href="#" target="_blank" rel="noopener">See More about this restaurant on Yelp!</a>
+                </div>
+            </div>
+            <div id="try-again" class="col-md-3 love-hate">
+                <button class="btn btn-block btn-default">Try again</button>
+            </div>
+        </div>
     </div>
 </div>
 
