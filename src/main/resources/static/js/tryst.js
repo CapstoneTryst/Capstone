@@ -1,6 +1,8 @@
 var searchResults = "";
+var category = "";
 
 $(".date_type").click(function() {
+    category = $(this).data("db-id");
    $.get("/show", {
        location: $("#location").val(),
        category: $(this).data("db-id")
@@ -13,6 +15,9 @@ $(".date_type").click(function() {
            $("#businessAddress").html(data.location.address[0] + "| " + data.location.city + ", " + data.location.state_code + " " + data.location.postal_code);
            $("#businessImage").attr("src", data.image_url.substring(0, data.image_url.length - 6) + "o.jpg");
            $("#yelpUrl").attr("href", data.url).html("See More about \"" + data.name + "\" on Yelp.com");
+
+           $(".select-place-to-go").data("business-id", data.id);
+           $("#try-again").data("db-id", category);
 
            $("#showPage").css({"display": "inline"});
            $('html,body').animate({
@@ -37,6 +42,27 @@ $("#businessButton").click(function() {
            $("#businessResults").html(searchResults);
        });
 });
+
+$(".select-place-to-go").click(function() {
+   $.ajax({
+       method: "POST",
+       url: "/business/new",
+       beforeSend: function(request) {
+           request.setRequestHeader($("#csrf-header").attr("content"), $("#csrf-token").attr("content"))
+       },
+       data: {
+           businessId: $(this).data("business-id")
+       }
+   })
+       .done(function(data) {
+
+       })
+       .fail(function(error) {
+       });
+});
+
+
+
 
 $("#logoutButton").click(function () {
     $("#logoutForm").submit()
