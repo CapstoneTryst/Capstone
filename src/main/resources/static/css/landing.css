@@ -202,7 +202,9 @@ input.transparent-input {
     padding: 5px;
 }
 /*love or retry*/
-
+.love-hate{
+    padding-top: 4em;
+}
 
 /*user rate*/
 .d-inline{

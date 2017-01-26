@@ -16,6 +16,7 @@
                         + "<input type='hidden' name='businessId' value='" + element.id + "'>"
                         + "<button class='submit-positive btn' type='submit'>+</button>"
                         + "</form>"
+                        + "<p></p>"
                         + "<p>" + categories[i - 1] + "</p>"
                         + "<form class='stopform' method='post' action='/business/negative'>"
                         + "<input type='hidden' name='_csrf' value='" + $("#csrf-token").attr("content") + "'>"
