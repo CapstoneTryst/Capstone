@@ -32,6 +32,7 @@ public class BusinessController extends BaseController {
     }
 
     @PostMapping("/business/new")
+    @ResponseStatus(value = HttpStatus.OK)
     public void userSelectsAPlaceToGo(@RequestParam(name = "businessId") String businessId) {
         TrystRanking newRanking = new TrystRanking();
 
