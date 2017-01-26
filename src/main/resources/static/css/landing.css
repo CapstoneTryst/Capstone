@@ -68,8 +68,6 @@ input {
     left:0;
     right:0;
     padding-bottom: 5px;
-    height: 50px;
-    width: 50px;
 }
 
 
@@ -97,6 +95,7 @@ h1 {
     font-family: 'ostrich', sans-serif;
     color: black;
 }
+
 
 .btn {
     background-color: transparent;
@@ -203,7 +202,13 @@ input.transparent-input {
 }
 /*love or retry*/
 .love-hate{
-    padding-top: 4em;
+    padding-top: 6em;
+}
+
+.heart-button {
+    outline-style: hidden;
+    background-color: transparent;
+
 }
 
 /*user rate*/

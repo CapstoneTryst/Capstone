@@ -3,7 +3,10 @@ use tryst_db;
 
 INSERT INTO users (email, home_zip, password,  username)
     VALUES
-        ('admin@tryst.com', '78209', '$2a$10$agOiOUWSGGV5dWEKSD8MhuSSZiYtfZM9rzzB1dsePhEK/Ld2gn/Eu', 'admin');
+        ('admin@tryst.com', '78209', '$2a$10$agOiOUWSGGV5dWEKSD8MhuSSZiYtfZM9rzzB1dsePhEK/Ld2gn/Eu', 'admin'),
+        ('britt@tryst.com', '78209', '$2a$10$agOiOUWSGGV5dWEKSD8MhuSSZiYtfZM9rzzB1dsePhEK/Ld2gn/Eu', 'britt'),
+        ('austin@tryst.com', '34695', '$2a$10$agOiOUWSGGV5dWEKSD8MhuSSZiYtfZM9rzzB1dsePhEK/Ld2gn/Eu', 'austin'),
+        ('brad@tryst.com', '78209', '$2a$10$agOiOUWSGGV5dWEKSD8MhuSSZiYtfZM9rzzB1dsePhEK/Ld2gn/Eu', 'brad');
 
 INSERT INTO date_categories (date_type)
     VALUES
@@ -265,7 +268,28 @@ INSERT INTO tryst_rankings (rating, yelp_id, date_category_id, user_id)
         (1, 'the-aztec-theatre-san-antonio-3', 7, 1),
         (1, 'the-aztec-theatre-san-antonio-3', 8, 1),
         (1, 'the-aztec-theatre-san-antonio-3', 9, 1),
-        (1, 'the-aztec-theatre-san-antonio-3', 11, 1);
+        (1, 'the-aztec-theatre-san-antonio-3', 11, 1),
+        (1, 'the-doseum-san-antonio', 7, 1),
+        (1, 'the-doseum-san-antonio', 10, 1),
+        (1, 'the-doseum-san-antonio', 8, 1),
+        (1, 'mcallister-park-san-antonio', 3, 1),
+        (1, 'mcallister-park-san-antonio', 6, 1),
+        (1, 'mcallister-park-san-antonio', 10, 1),
+        (1, 'brackenridge-park-san-antonio', 3, 1),
+        (1, 'brackenridge-park-san-antonio', 6, 1),
+        (1, 'brackenridge-park-san-antonio', 10, 1),
+        (1, 'phil-hardberger-park-san-antonio', 3, 1),
+        (1, 'phil-hardberger-park-san-antonio', 6, 1),
+        (1, 'phil-hardberger-park-san-antonio', 10, 1),
+        (1, 'mission-kayak-san-antonio', 3, 1),
+        (1, 'mission-kayak-san-antonio', 4, 1),
+        (1, 'cypress-valley-canopy-tours-spicewood-2', 3, 1),
+        (1, 'cypress-valley-canopy-tours-spicewood-2', 2, 1),
+        (1, 'cypress-valley-canopy-tours-spicewood-2', 4, 1),
+        (1, 'the-san-antonio-river-walk-san-antonio', 3, 1),
+        (1, 'the-san-antonio-river-walk-san-antonio', 4, 1);
+
+
 
 
 
