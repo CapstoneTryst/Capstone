@@ -31,6 +31,15 @@ public class BusinessController extends BaseController {
         return "redirect:/user/rate";
     }
 
+    @PostMapping("/business/new")
+    public void userSelectsAPlaceToGo(@RequestParam(name = "businessId") String businessId) {
+        TrystRanking newRanking = new TrystRanking();
+
+        newRanking.setYelpId(businessId);
+        newRanking.setUser(loggedInUser());
+        rankingsDao.save(newRanking);
+    }
+
     @PostMapping("/business/positive")
     @ResponseStatus(value = HttpStatus.OK)
     public void ratePositive(@RequestParam("category") long category, @RequestParam("businessId") String businessId) {
