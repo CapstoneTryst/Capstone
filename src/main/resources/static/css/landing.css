@@ -63,13 +63,20 @@ input {
     text-decoration: none;
 }
 
+.logo h1 {
+    display: inline-block;
+    margin-left: 0;
+   margin-bottom: 20px;
+    height: 15px;
+    color: floralwhite;
+}
+
 #heart img{
     position:relative;
     left:0;
     right:0;
     padding-bottom: 5px;
 }
-
 
 #content{
     display: table;
@@ -98,6 +105,10 @@ h1 {
 
 
 .btn {
+    background-color: transparent;
+}
+
+.transparent-button{
     background-color: transparent;
     border-color: #ccc;
     color: floralwhite;
@@ -208,8 +219,8 @@ input.transparent-input {
 .heart-button {
     outline-style: hidden;
     background-color: transparent;
-
 }
+
 
 /*user rate*/
 .d-inline{

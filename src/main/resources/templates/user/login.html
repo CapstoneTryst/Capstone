@@ -23,7 +23,6 @@
             <p th:if="${param.logout}" class="alert alert-info">
                 You have been logged out.
             </p>
-
             <form th:action="@{/user/login}" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -34,7 +33,7 @@
                     <label for="password">Password</label>
                     <input class="form-control transparent-input" id="password" name="password" type="password"/>
                 </div>
-                <button type="submit" class="btn">Log In</button>
+                <button type="submit" class="btn transparent-button">Log In</button>
             </form>
 
         </div>
