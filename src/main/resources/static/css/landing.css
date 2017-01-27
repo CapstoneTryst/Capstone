@@ -265,3 +265,13 @@ input.transparent-input {
     font-size: 4em;
 }
 
+.liked-business{
+    padding-bottom: 10px;
+}
+
+.modal-color {
+    background-color: lightcoral;
+    color: black;
+    font-size: 1.5em;
+}
+

@@ -7,12 +7,12 @@
             ratingString = "";
             modelAreaString = "";
             $.each(data, function (index, element) {
-                ratingString += "<div class='col-sm-12 text-center'><img src='" + element.image_url.substring(0, element.image_url.length - 6) + "ls.jpg' class='img-rounded' width='200' height='200'/><h2>" + element.name + "</h2>" +
+                ratingString += "<div class='col-sm-12 text-center liked-business'><img src='" + element.image_url.substring(0, element.image_url.length - 6) + "ls.jpg' class='img-rounded' width='200' height='200'/><h2>" + element.name + "</h2>" +
                     "<button type='button' class='btn transparent-button' data-toggle='modal' data-target='#" + element.id +"-model'>Rate it</button></div>";
 
                 modelAreaString += "<div class='modal fade' id='" + element.id + "-model' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>" +
                     "<div class='modal-dialog modal-lg' role='document'>" +
-                    "<div class='modal-content'>" +
+                    "<div class='modal-content modal-color'>" +
                     "<div class='modal-header'>" +
                     "<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'></span></button>" +
                     "<h4 class='modal-title' id='myLargeModalLabel'>Rate " + element.name + "</h4>" +
