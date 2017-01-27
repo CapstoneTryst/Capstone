@@ -6,42 +6,50 @@
 </head>
 <body class="gradient">
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<div class="container col-md-6 col-md-offset-3">
+<div class="container">
+    <div class="row">
+        <h1 class="page-header">Create An Account</h1>
 
-    <h1>Create A User</h1>
+        <!--<hr/>-->
+        <div class="col-md-6 col-md-offset-3">
 
-    <hr/>
 
-    <form th:action="@{/user/create}" th:method="POST" th:object="${user}">
+            <form th:action="@{/user/create}" th:method="POST" th:object="${user}">
 
-        <div class="form-group">
-            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-danger"></p>
-            <label for="email">Email</label>
-            <input class="form-control transparent-input" id="email" name="email" th:field="*{email}" type="text" placeholder="Please enter a valid Email"
-                   autofocus="autofocus" />
+                <div class="form-group">
+                    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-danger"></p>
+                    <label for="email">Email</label>
+                    <input class="form-control transparent-input" id="email" name="email" th:field="*{email}"
+                           type="text" placeholder="Please enter a valid Email"
+                           autofocus="autofocus"/>
+                </div>
+
+                <div class="form-group">
+                    <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="alert alert-danger"></p>
+                    <label for="username">Username</label>
+                    <input class="form-control transparent-input" id="username" name="username" th:field="*{username}"
+                           type="text" placeholder="Username"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control transparent-input" id="password" name="password" th:field="*{password}"
+                           type="password" placeholder="Password"/>
+                    <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="alert alert-danger"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="homeZip">Zip Code</label>
+                    <input class="form-control transparent-input" id="homeZip" name="homeZip" th:field="*{homeZip}"
+                           type="text" placeholder="Zip Code"/>
+                    <!--<p th:if="${#fields.hasErrors('homeZip')}" th:errors="*{homeZip}" class="alert alert-danger"></p>-->
+                </div>
+
+                <button class="btn transparent-button btn-submit" type="submit">Sign Up</button>
+
+            </form>
         </div>
-
-        <div class="form-group">
-            <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="alert alert-danger"></p>
-            <label for="username">Username</label>
-            <input class="form-control transparent-input" id="username" name="username" th:field="*{username}" type="text" placeholder="Username" />
-        </div>
-
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input class="form-control transparent-input" id="password" name="password" th:field="*{password}" type="password" placeholder="Password" />
-            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="alert alert-danger"></p>
-        </div>
-
-        <div class="form-group">
-            <label for="homeZip">Zip Code</label>
-            <input class="form-control transparent-input" id="homeZip" name="homeZip" th:field="*{homeZip}" type="text" placeholder="Zip Code" />
-            <!--<p th:if="${#fields.hasErrors('homeZip')}" th:errors="*{homeZip}" class="alert alert-danger"></p>-->
-        </div>
-
-        <button class="btn transparent-button btn-submit" type="submit">Sign Up</button>
-
-    </form>
+    </div>
 </div>
 <footer th:replace="fragments/footer :: footer"></footer>
 </body>
