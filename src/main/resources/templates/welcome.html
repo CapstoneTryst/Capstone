@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head th:replace="fragments/header :: header(${'Welcome to Tryst'})">
     <!--Partial Header from fragments/header.html-->
@@ -59,7 +59,7 @@
     <div class="row">
         <div class="row wrapper test" id="showPage" style="display: none;">
             <div class="col-md-3 col-xs-3 love-hate select-place-to-go">
-                <button class="heart-button btn">
+                <button sec:authorize="isAuthenticated()" class="heart-button btn">
                         <div class="animated pulse infinite" id="heart">
                             <img src="https://i.stack.imgur.com/iBCpb.png" height="100" width="100"/>
                         </div>
