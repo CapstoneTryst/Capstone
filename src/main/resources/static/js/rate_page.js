@@ -14,8 +14,11 @@
                 modelAreaString += "<div class='modal fade' id='" + element.id + "-model' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>" +
                     "<div class='modal-dialog modal-lg' role='document'>" +
                     "<div class='modal-content'>" +
+                    "<div class='modal-header'>" +
                     "<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>" +
-                    "<h4 class='modal-title' id='myLargeModalLabel'>Rate " + element.name + "</h4></div><div class='modal-body'>" +
+                    "<h4 class='modal-title' id='myLargeModalLabel'>Rate " + element.name + "</h4>" +
+                    "</div>" +
+                    "<div class='modal-body'>" +
                     "<table class='table'><tr>";
 
                 for (var i = 1; i <= 11; i++) {
@@ -36,9 +39,10 @@
                 }
                 modelAreaString += "</tr></table>" +
                     "</div>" +
-                    "</div>" +
                     "<div class='modal-footer'>" +
-                    "<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button></div></div></div>"
+                    "<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>" +
+                    "</div>" +
+                    "</div></div></div>"
 
             });
             $("#businesses-to-rate").html(ratingString);
@@ -68,6 +72,7 @@
                        console.log("This failed");
                    })
             });
+
             $(".submit-negative").click(function() {
                 $.ajax({
                     method: "POST",
@@ -77,6 +82,11 @@
                     .done(function(data) {
                         console.log(data);
                         console.log("This is done")
+                        swal({
+                            title: "success",
+                            text: "You've rated this!",
+                            type: "success"
+                        });
                     })
                     .error(function(error) {
                         console.log(error);
