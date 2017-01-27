@@ -57,6 +57,11 @@
                    .done(function(data) {
                        console.log(data);
                        console.log("This is done")
+                       swal({
+                           title: "success",
+                           text: "You've rated this!",
+                           type: "success"
+                       });
                    })
                    .error(function(error) {
                        console.log(error);
