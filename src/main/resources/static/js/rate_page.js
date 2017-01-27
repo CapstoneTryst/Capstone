@@ -1,22 +1,31 @@
 (function() {
     var categories = ["Casual First Date", "Anniversary", "Outdoors", "Sight Seeing", "Romantic Date", "Relaxing Date", "First Date IRL", "Artsy", "Live Music", "No $$ No Problem", "Classy"];
     var ratingString = "";
+    var modelAreaString = "";
     $.get("/user/unrated")
         .done(function (data) {
             ratingString = "";
+            modelAreaString = "";
             $.each(data, function (index, element) {
-                ratingString += "<div><div class='col-sm-12'><h2 class='col-sm-4'>" + element.name + "</h2>" +
-                    "<a id='yelpUrl' href='" + element.url + "'class='col-sm-4' target='_blank' style='margin-top: 35px' rel='noopener'>See More about " + element.name + " on Yelp!</a></div>" +
+                ratingString += "<div class='col-sm-12'><div class='col-sm-4'><img src='" + element.image_url.substring(0, element.image_url.length - 6) + "ls.jpg' class='img-rounded' width='200' height='200' /><h2>" + element.name + "</h2></div>" +
+                    "<a id='yelpUrl' href='" + element.url + "' class='col-sm-4' target='_blank' style='margin-top: 35px' rel='noopener'>See More about " + element.name + " on Yelp!</a>" +
+                    "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#" + element.id +"-model'>Rate it</button></div>";
+
+                modelAreaString += "<div class='modal fade' id='" + element.id + "-model' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>" +
+                    "<div class='modal-dialog modal-lg' role='document'>" +
+                    "<div class='modal-content'>" +
+                    "<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>" +
+                    "<h4 class='modal-title' id='myLargeModalLabel'>Rate " + element.name + "</h4></div><div class='modal-body'>" +
                     "<table class='table'><tr>";
+
                 for (var i = 1; i <= 11; i++) {
-                    ratingString +=
+                    modelAreaString +=
                         "<td class='text-center'><form class='stopform' method='post' action='/business/positive'>"
                         + "<input type='hidden' name='_csrf' value='" + $("#csrf-token").attr("content") + "'>"
                         + "<input type='hidden' name='category' value='" + i + "'>"
                         + "<input type='hidden' name='businessId' value='" + element.id + "'>"
                         + "<button class='submit-positive btn' type='submit'>+</button>"
                         + "</form>"
-                        + "<p></p>"
                         + "<p>" + categories[i - 1] + "</p>"
                         + "<form class='stopform' method='post' action='/business/negative'>"
                         + "<input type='hidden' name='_csrf' value='" + $("#csrf-token").attr("content") + "'>"
@@ -25,10 +34,15 @@
                         + "<button class='submit-negative btn' type='submit'>-</button>"
                         + "</form></td>"
                 }
-                ratingString += "</tr></table></div>"
+                modelAreaString += "</tr></table>" +
+                    "</div>" +
+                    "</div>" +
+                    "<div class='modal-footer'>" +
+                    "<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button></div></div></div>"
 
             });
             $("#businesses-to-rate").html(ratingString);
+            $("#modelArea").html(modelAreaString);
 
             $(".stopform").submit(function (e) {
                 e.preventDefault();
