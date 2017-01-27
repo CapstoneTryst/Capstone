@@ -55,6 +55,11 @@ $(".select-place-to-go").click(function() {
        }
    })
        .done(function(data) {
+           swal({
+               title: "It's a Date!",
+               text: "Don't Forget To Rate This Spot!",
+               type: "success"
+           });
 
        })
        .fail(function(error) {
