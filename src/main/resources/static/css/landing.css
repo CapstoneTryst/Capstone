@@ -63,12 +63,19 @@ input {
     text-decoration: none;
 }
 
-.logo h1 {
+div.logo {
     display: inline-block;
     margin-left: 0;
    margin-bottom: 20px;
     height: 15px;
-    color: floralwhite;
+}
+
+.logo a{
+    color:floralwhite;
+}
+
+.logo a:hover{
+    text-decoration: none;
 }
 
 #heart img{
@@ -106,6 +113,10 @@ h1 {
 
 .btn {
     background-color: transparent;
+}
+
+.btn:focus, .btn:active{
+    outline: none;
 }
 
 .transparent-button{

@@ -129,6 +129,10 @@ public class MainController {
 //        model.addAttribute("suggestion", suggestion);
 //        return "show";
 //    }
+    @GetMapping("/contact")
+    public String getContactPage(){
+        return "contact";
+    }
 
     private String getSearchTerm(long category) {
         String searchTerm = "";
