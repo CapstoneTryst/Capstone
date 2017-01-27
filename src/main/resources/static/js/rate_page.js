@@ -7,8 +7,7 @@
             ratingString = "";
             modelAreaString = "";
             $.each(data, function (index, element) {
-                ratingString += "<div class='col-sm-12'><div class='col-sm-4'><img src='" + element.image_url.substring(0, element.image_url.length - 6) + "ls.jpg' class='img-rounded' width='200' height='200' /><h2>" + element.name + "</h2></div>" +
-                    "<a id='yelpUrl' href='" + element.url + "' class='col-sm-4' target='_blank' style='margin-top: 35px' rel='noopener'>See More about " + element.name + " on Yelp!</a>" +
+                ratingString += "<div class='col-sm-12 text-center'><img src='" + element.image_url.substring(0, element.image_url.length - 6) + "ls.jpg' class='img-rounded' width='200' height='200'/><h2>" + element.name + "</h2>" +
                     "<button type='button' class='btn transparent-button' data-toggle='modal' data-target='#" + element.id +"-model'>Rate it</button></div>";
 
                 modelAreaString += "<div class='modal fade' id='" + element.id + "-model' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>" +
