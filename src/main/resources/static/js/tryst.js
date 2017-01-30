@@ -34,6 +34,7 @@ $(".date_type").click(function() {
 });
 
 $("#businessButton").click(function() {
+    $("#wrapper").fadeIn();
    $.get("/business", {
        name: $("#businessTerm").val(),
        location: $("#businessLocation").val()
@@ -51,7 +52,11 @@ $("#businessButton").click(function() {
                 "<hr>";
           });
            $("#businessResults").html(searchResults);
-       });
+           $("#wrapper").fadeOut();
+       })
+       .error(function(error) {
+           $("#wrapper").fadeOut();
+       })
 });
 
 $(".select-place-to-go").click(function() {
