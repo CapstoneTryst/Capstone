@@ -14,9 +14,7 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3 text-center">
             <h1 id="title">Mingle</h1>
-            <h4 class="center" style="color: #292929">Welcome to Mingle: a place to help you find the perfect date spot.
-                <br/>Mingle will only display one suggestion at a time limiting the stress of overchoice. Enter your
-                location and we'll show you a good time</h4>
+            <h4 class="center" style="color: #fffaf0">we'll show you a good time</h4>
             <input type="text" id="location" class="form-control transparent-input" placeholder="enter your location"/>
             <div class="row categories">
                 <div th:each="category: ${categories}" class="date_type" th:attr="data-db-id=${category.id}">
