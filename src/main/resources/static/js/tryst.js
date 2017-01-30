@@ -3,6 +3,7 @@ var category = "";
 
 $(".date_type").click(function() {
     category = $(this).data("db-id");
+    $("#wrapper").fadeIn();
    $.get("/show", {
        location: $("#location").val(),
        category: $(this).data("db-id")
@@ -24,7 +25,12 @@ $(".date_type").click(function() {
                    scrollTop: $('.second').offset().top},
                'slow');
            console.log(data);
-       });
+
+           $("#wrapper").fadeOut();
+       })
+       .error(function(error) {
+           $("#wrapper").fadeOut();
+       })
 });
 
 $("#businessButton").click(function() {
