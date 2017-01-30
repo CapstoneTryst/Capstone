@@ -3,6 +3,7 @@ var category = "";
 
 $(".date_type").click(function() {
     category = $(this).data("db-id");
+    $("#wrapper").fadeIn();
    $.get("/show", {
        location: $("#location").val(),
        category: $(this).data("db-id")
@@ -24,10 +25,16 @@ $(".date_type").click(function() {
                    scrollTop: $('.second').offset().top},
                'slow');
            console.log(data);
-       });
+
+           $("#wrapper").fadeOut();
+       })
+       .error(function(error) {
+           $("#wrapper").fadeOut();
+       })
 });
 
 $("#businessButton").click(function() {
+    $("#wrapper").fadeIn();
    $.get("/business", {
        name: $("#businessTerm").val(),
        location: $("#businessLocation").val()
@@ -45,7 +52,11 @@ $("#businessButton").click(function() {
                 "<hr>";
           });
            $("#businessResults").html(searchResults);
-       });
+           $("#wrapper").fadeOut();
+       })
+       .error(function(error) {
+           $("#wrapper").fadeOut();
+       })
 });
 
 $(".select-place-to-go").click(function() {

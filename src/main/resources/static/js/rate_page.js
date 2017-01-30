@@ -2,6 +2,7 @@
     var categories = ["Casual First Date", "Anniversary", "Outdoors", "Sight Seeing", "Romantic Date", "Relaxing Date", "First Date IRL", "Artsy", "Live Music", "No $$ No Problem", "Classy"];
     var ratingString = "";
     var modelAreaString = "";
+    $("#wrapper").fadeIn();
     $.get("/user/unrated")
         .done(function (data) {
             ratingString = "";
@@ -93,9 +94,11 @@
                     })
             });
             console.log(data);
+            $("#wrapper").fadeOut();
         })
         .fail(function (error) {
             console.log(error);
+            $("#wrapper").fadeOut();
         });
 
 
