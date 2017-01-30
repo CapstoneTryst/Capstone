@@ -60,8 +60,8 @@
         <div class="row wrapper test" id="showPage" style="display: none;">
             <div class="col-md-3 col-xs-3 love-hate select-place-to-go">
                 <button sec:authorize="isAuthenticated()" class="heart-button btn">
-                    <div class="animated pulse infinite" id="heart">
-                        <img src="https://i.stack.imgur.com/iBCpb.png" height="100" width="100"/>
+                    <div class="front-button animated pulse infinite" id="heart">
+                        <img src="http://www.clker.com/cliparts/j/m/c/r/d/t/coral-heart-hi.png" height="100" width="100"/>
                     </div>
                 </button>
             </div>
@@ -80,11 +80,18 @@
             </div>
             <div class="col-md-3 col-sx-3 love-hate date_type" id="try-again">
                 <button class="btn">
-                    <div class="animated pulse infinite" id="retry-arrow">
+                    <div class="front-button animated pulse infinite" id="retry-arrow">
                         <img src="/img/reload-icon.png" height="100" width="100"/>
                     </div>
                 </button>
             </div>
+        </div>
+    </div>
+</div>
+<div id="wrapper">
+    <div id="overlay">
+        <div id="inner">
+            <h3>Loading...</h3>
         </div>
     </div>
 </div>
