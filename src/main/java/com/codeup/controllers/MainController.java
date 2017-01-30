@@ -47,7 +47,9 @@ public class MainController {
     @GetMapping("/show")
     public @ResponseBody JSONObject showPage(@RequestParam(name = "location") String location, @RequestParam(name = "category") long category) {
         String searchTerm = getSearchTerm(category);
+        System.out.println("Getting yelp");
         JSONArray allInArea = yelpAPI.queryAPIByLocation(searchTerm, location);
+        System.out.println("finished with yelp");
         List<TrystRanking> allEntrysForSelectedCategory = rankingsDao.findAllByDateCategory(categoriesDao.findOne(category));
         JSONObject selectedResult;
         JSONArray allInAreaAlsoInDatabase = new JSONArray();
