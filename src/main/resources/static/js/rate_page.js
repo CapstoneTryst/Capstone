@@ -59,8 +59,6 @@
                    data: $(this).closest("form").serialize()
                })
                    .done(function(data) {
-                       console.log(data);
-                       console.log("This is done")
                        swal({
                            title: "Success",
                            text: "You've rated this!",
@@ -68,8 +66,6 @@
                        });
                    })
                    .error(function(error) {
-                       console.log(error);
-                       console.log("This failed");
                    })
             });
 
@@ -80,8 +76,6 @@
                     data: $(this).closest("form").serialize()
                 })
                     .done(function(data) {
-                        console.log(data);
-                        console.log("This is done")
                         swal({
                             title: "Success",
                             text: "You've rated this!",
@@ -89,15 +83,11 @@
                         });
                     })
                     .error(function(error) {
-                        console.log(error);
-                        console.log("This failed");
                     })
             });
-            console.log(data);
             $("#wrapper").fadeOut();
         })
         .fail(function (error) {
-            console.log(error);
             $("#wrapper").fadeOut();
         });
 
