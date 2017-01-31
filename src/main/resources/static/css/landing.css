@@ -22,9 +22,14 @@ input {
     font-family: sans-serif;
 }
 
-.container > .categories {
-    display: table-cell;
-    vertical-align: middle;
+/*.container > .categories {*/
+    /*display: table-cell;*/
+    /*vertical-align: middle;*/
+/*}*/
+
+.button-design {
+    width: 75%;
+    height: 75%;
 }
 
 /*Navigation Bar**/
@@ -131,11 +136,10 @@ h1 {
     background-color: transparent;
 }
 
-.date_type {
-    vertical-align: middle;
-    float: left;
-    padding: 1em;
-}
+/*.date_type {*/
+    /*vertical-align: middle;*/
+    /*float: left;*/
+/*}*/
 
 /*business search*/
 input.transparent-input {
@@ -229,7 +233,6 @@ input.transparent-input {
     margin-left: 15%;
     padding: 7px;
 }
-
 .test {
     width: 200px;
     /*display:inline-block;*/
@@ -304,4 +307,18 @@ input.transparent-input {
 }
 #wrapper{
     display: none;
+}
+
+.one-third {
+    float: left;
+    width: 33.333%;
+}
+
+.category-button {
+    border-radius: 0;
+    padding: 4em;
+}
+
+.location-bar {
+    margin-bottom: 1em;
 }
