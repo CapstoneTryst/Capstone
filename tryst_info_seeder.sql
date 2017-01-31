@@ -1,6 +1,13 @@
 
 use tryst_db;
 
+ALTER TABLE tryst_db.tryst_rankings DROP FOREIGN KEY FKgnseb34hd0ox38x32g9gweii1;
+ALTER TABLE tryst_db.tryst_rankings DROP FOREIGN KEY FKla4vm3g65dkx9wyhm67nak8r7;
+DROP TABLE tryst_db.tryst_rankings;
+DROP TABLE tryst_db.users;
+DROP TABLE tryst_db.date_categories;
+DROP TABLE tryst_db.user_roles;
+
 INSERT INTO users (email, home_zip, password,  username)
     VALUES
         ('admin@tryst.com', '78209', '$2a$10$agOiOUWSGGV5dWEKSD8MhuSSZiYtfZM9rzzB1dsePhEK/Ld2gn/Eu', 'admin'),

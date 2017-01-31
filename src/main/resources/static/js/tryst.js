@@ -39,16 +39,16 @@ $("#businessButton").click(function() {
        location: $("#businessLocation").val()
    })
        .done(function(data) {
-           searchResults = "<hr>";
+           searchResults = "<br>";
           $.each(data, function(index, element) {
-            searchResults += "<img src='" + element.image_url.substring(0, element.image_url.length - 6) + "ls.jpg' class='img-rounded' width='200' height='200'>" +
-                "<p>" + element.location.address[0] + ", " + element.location.city + ", " + element.location.state_code + " " + element.location.postal_code + "</p>" +
+            searchResults += "<div class='col-sm-4'><img src='" + element.image_url.substring(0, element.image_url.length - 6) + "ls.jpg' class='img-rounded' width='200' height='200'>" +
                 "<h1>" + element.name + "</h1>" + "" +
+                "<p>" + element.location.address[0] + ", " + element.location.city + ", " + element.location.state_code + " " + element.location.postal_code + "</p>" +
                 "<form method='post' action='/business/new/" + element.id + "'>" +
                 "<input name='_csrf' type='hidden' value='" + $("#csrf-token").attr("content") + "'>" +
                 "<button class='btn' type='submit'>Rate this spot</button>" +
                 "</form>" +
-                "<hr>";
+                "</div>";
           });
            $("#businessResults").html(searchResults);
            $("#wrapper").fadeOut();
