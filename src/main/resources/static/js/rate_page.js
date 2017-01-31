@@ -1,5 +1,5 @@
 (function() {
-    var categories = ["Casual First Date", "Anniversary", "Outdoors", "Sight Seeing", "Romantic Date", "Relaxing Date", "First Date IRL", "Artsy", "Live Music", "No $$ No Problem", "Classy"];
+    var categories = ["Casual First Date", "Anniversary", "Outdoors", "Sight Seeing", "Romantic Date", "Relaxing Date", "First Date IRL", "Artsy", "Live Music", "No $$ No Problem", "Classy", "Playful"];
     var ratingString = "";
     var modelAreaString = "";
     $("#wrapper").fadeIn();
@@ -8,7 +8,7 @@
             ratingString = "";
             modelAreaString = "";
             $.each(data, function (index, element) {
-                ratingString += "<div class='col-sm-12 text-center liked-business'><img src='" + element.image_url.substring(0, element.image_url.length - 6) + "ls.jpg' class='img-rounded' width='200' height='200'/><h2>" + element.name + "</h2>" +
+                ratingString += "<div class='col-sm-4 text-center liked-business'><img src='" + element.image_url.substring(0, element.image_url.length - 6) + "ls.jpg' class='img-rounded' width='200' height='200'/><h2>" + element.name + "</h2>" +
                     "<button type='button' class='btn transparent-button' data-toggle='modal' data-target='#" + element.id +"-model'>Rate it</button></div>";
 
                 modelAreaString += "<div class='modal fade' id='" + element.id + "-model' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>" +
@@ -19,25 +19,27 @@
                     "<h4 class='modal-title' id='myLargeModalLabel'>Rate " + element.name + "</h4>" +
                     "</div>" +
                     "<div class='modal-body'>" +
-                    "<table class='table'><tr>";
+                    "<div class='row'>";
 
-                for (var i = 1; i <= 11; i++) {
+                for (var i = 1; i <= 12; i++) {
                     modelAreaString +=
-                        "<td class='text-center'><form class='stopform' method='post' action='/business/positive'>"
+                        "<div class='text-center col-md-3 '>" +
+                        "<form class='stopform' method='post' action='/business/positive'>"
                         + "<input type='hidden' name='_csrf' value='" + $("#csrf-token").attr("content") + "'>"
                         + "<input type='hidden' name='category' value='" + i + "'>"
                         + "<input type='hidden' name='businessId' value='" + element.id + "'>"
-                        + "<button class='submit-positive btn' type='submit'>+</button>"
+                        + "<button class='submit-positive btn-lg btn-primary' type='submit'>+</button>"
                         + "</form>"
-                        + "<p>" + categories[i - 1] + "</p>"
                         + "<form class='stopform' method='post' action='/business/negative'>"
                         + "<input type='hidden' name='_csrf' value='" + $("#csrf-token").attr("content") + "'>"
                         + "<input type='hidden' name='category' value='" + i + "'>"
                         + "<input type='hidden' name='businessId' value='" + element.id + "'>"
-                        + "<button class='submit-negative btn' type='submit'>-</button>"
-                        + "</form></td>"
+                        + "<button class='submit-negative btn-lg btn-danger' type='submit'>-</button>"
+                        + "</form>" +
+                        + "<p>" + categories[i - 1] + "</p>" +
+                        "</div>"
                 }
-                modelAreaString += "</tr></table>" +
+                modelAreaString += "</div>" +
                     "</div>" +
                     "<div class='modal-footer'>" +
                     "<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>" +
@@ -59,8 +61,6 @@
                    data: $(this).closest("form").serialize()
                })
                    .done(function(data) {
-                       console.log(data);
-                       console.log("This is done")
                        swal({
                            title: "Success",
                            text: "You've rated this!",
@@ -68,8 +68,6 @@
                        });
                    })
                    .error(function(error) {
-                       console.log(error);
-                       console.log("This failed");
                    })
             });
 
@@ -80,8 +78,6 @@
                     data: $(this).closest("form").serialize()
                 })
                     .done(function(data) {
-                        console.log(data);
-                        console.log("This is done")
                         swal({
                             title: "Success",
                             text: "You've rated this!",
@@ -89,15 +85,11 @@
                         });
                     })
                     .error(function(error) {
-                        console.log(error);
-                        console.log("This failed");
                     })
             });
-            console.log(data);
             $("#wrapper").fadeOut();
         })
         .fail(function (error) {
-            console.log(error);
             $("#wrapper").fadeOut();
         });
 

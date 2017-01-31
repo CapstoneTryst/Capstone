@@ -20,7 +20,8 @@ INSERT INTO date_categories (date_type)
         ('Artsy'),
         ('Live Music'),
         ('No $$ No Problem'),
-        ('Classy');
+        ('Classy'),
+        ('Playful');
 
 
 INSERT INTO tryst_rankings (rating, yelp_id, date_category_id, user_id)
