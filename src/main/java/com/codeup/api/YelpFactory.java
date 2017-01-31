@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class YelpFactory {
     @Value("${yelp-consumer-key}")
-    private static String CONSUMER_KEY = "dSVCGtVo4VsxeSy97PISxg";
+    private static String CONSUMER_KEY = "";
     @Value("${yelp-consumer-secret}")
-    private static String CONSUMER_SECRET = "_RPvdp4_9AVYc-i83L8D1Cvs9n4";
+    private static String CONSUMER_SECRET = "";
     @Value("${yelp-token}")
-    private static String TOKEN = "MUM_VOM60HrcjEBTwfCySYiy7hBIgIh0";
+    private static String TOKEN = "";
     @Value("${yelp-token-secret}")
-    private static String TOKEN_SECRET = "cSUGqasKMECFxe701LPcICw6GF4";
+    private static String TOKEN_SECRET = "";
 
     private static Yelp yelpDao;
 
