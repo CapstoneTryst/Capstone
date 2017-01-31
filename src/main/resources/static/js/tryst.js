@@ -24,7 +24,6 @@ $(".date_type").click(function() {
            $('html,body').animate({
                    scrollTop: $('.second').offset().top},
                'slow');
-           console.log(data);
 
            $("#wrapper").fadeOut();
        })
