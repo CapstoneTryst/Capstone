@@ -18,11 +18,11 @@
                 </div>
                 <div class="mynav pull-right">
                     <ul>
-                        <li sec:authorize="isAuthenticated()"><a href="/user/rate">Rate your spots</a></li>
-                        <li sec:authorize="isAuthenticated()"><a href="/business/new">Add a Spot</a></li>
-                        <li sec:authorize="isAnonymous()"><a href="/user/create">Create User</a></li>
-                        <li sec:authorize="isAnonymous()"><a href="/user/login">Login</a></li>
-                        <li sec:authorize="isAuthenticated()" id="logoutButton"><a href="#">Logout</a></li>
+                        <li sec:authorize="isAuthenticated()"><a class="navtext" href="/user/rate">Rate</a></li>
+                        <li sec:authorize="isAuthenticated()"><a class="navtext" href="/business/new">Add</a></li>
+                        <li sec:authorize="isAnonymous()"><a class="navtext" href="/user/create">New User</a></li>
+                        <li sec:authorize="isAnonymous()"><a class="navtext" href="/user/login">Login</a></li>
+                        <li sec:authorize="isAuthenticated()" id="logoutButton"><a class="navtext" href="#">Logout</a></li>
                     </ul>
                 </div>
             </div>
