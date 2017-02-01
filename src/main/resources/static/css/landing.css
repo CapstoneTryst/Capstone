@@ -302,10 +302,6 @@ input.transparent-input {
     display: none;
 }
 
-.one-third {
-    float: left;
-    width: 33.333%;
-}
 
 .category-button {
     border-radius: 0;
@@ -328,14 +324,7 @@ input.transparent-input {
     padding-left: 0;
 }
 
-#screw-this{
-    background-color: black;
-}
 
-.date_type:hover {
-    opacity: .75;
-    background-color: black;
-}
 
 .opaque {
     color: white;
