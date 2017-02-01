@@ -39,7 +39,7 @@ $("#businessButton").click(function() {
        location: $("#businessLocation").val()
    })
        .done(function(data) {
-           searchResults = "<br>";
+           searchResults = "<hr>";
           $.each(data, function(index, element) {
             searchResults += "<div class='col-sm-4'><img src='" + element.image_url.substring(0, element.image_url.length - 6) + "ls.jpg' class='img-rounded' width='200' height='200'>" +
                 "<h1>" + element.name + "</h1>" + "" +
