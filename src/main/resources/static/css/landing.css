@@ -352,13 +352,13 @@ input.transparent-input {
 
 #outdoors {
     background-repeat: no-repeat;
-    background-image: url('/img/outdoors.jpg');
+    background-image: url('/img/outdoors.png');
     background-size: cover;
 }
 
 #sightseeing {
     background-repeat: no-repeat;
-    background-image: url('/img/sightseeing.jpg');
+    background-image: url('/img/sightseeing.png');
     background-size: cover;
 }
 
@@ -376,13 +376,13 @@ input.transparent-input {
 
 #romantic {
     background-repeat: no-repeat;
-    background-image: url('/img/relax.jpg');
+    background-image: url('/img/relax.png');
     background-size: cover;
 }
 
 #no-money {
     background-repeat: no-repeat;
-    background-image: url('/img/pig.jpg');
+    background-image: url('/img/pig.png');
     background-size: cover;
 }
 
@@ -400,13 +400,13 @@ input.transparent-input {
 
 #online-irl {
     background-repeat: no-repeat;
-    background-image: url('/img/online-irl.jpg');
+    background-image: url('/img/online-irl.png');
     background-size: cover;
 }
 
 #relaxing {
     background-repeat: no-repeat;
-    background-image: url('/img/romantic.jpg');
+    background-image: url('/img/romantic.png');
     background-size: cover;
 }
 

@@ -148,6 +148,8 @@ public class MainController {
                 break;
             case 9: searchTerm = "live music";
                 break;
+            case 12: searchTerm = "Fun";
+                break;
             default: searchTerm = "";
                 break;
         }
