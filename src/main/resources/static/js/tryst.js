@@ -87,3 +87,7 @@ $(".select-place-to-go").click(function() {
 $("#logoutButton").click(function () {
     $("#logoutForm").submit()
 });
+
+// $(".date_type").hover(function(){
+//     this.
+//     })
