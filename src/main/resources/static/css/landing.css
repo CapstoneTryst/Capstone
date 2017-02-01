@@ -50,7 +50,7 @@ input {
     list-style: none;
     display: inline-block;
     border-left: 1px solid white;
-    padding-top: 36px;
+    padding-top: 18px;
     padding-left: 10px;
     padding-right: 10px;
     height: 60px;
@@ -321,4 +321,8 @@ input.transparent-input {
 
 .location-bar {
     margin-bottom: 1em;
+}
+
+.navtext {
+    font-size: 2em;
 }
