@@ -48,7 +48,7 @@ input {
     list-style: none;
     display: inline-block;
     border-left: 1px solid white;
-    padding-top: 36px;
+    padding-top: 18px;
     padding-left: 10px;
     padding-right: 10px;
     height: 60px;
@@ -302,9 +302,9 @@ input.transparent-input {
     display: none;
 }
 
-.one-fourth {
+.one-third {
     float: left;
-    width: 25%;
+    width: 33.333%;
 }
 
 .category-button {
@@ -419,4 +419,8 @@ input.transparent-input {
     background-repeat: no-repeat;
     background-image: url('/img/romantic.jpg');
     background-size: cover;
+}
+
+.navtext {
+    font-size: 2em;
 }
