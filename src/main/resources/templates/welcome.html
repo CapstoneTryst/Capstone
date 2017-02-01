@@ -15,20 +15,78 @@
         <div class="col-md-6 col-md-offset-3 text-center">
             <h1 id="title">Mingle</h1>
             <h4 class="center" style="color: #fffaf0">we'll show you a good time</h4>
-            <input type="text" id="location" class="form-control transparent-input location-bar" placeholder="enter your location"/>
+            <input type="text" id="location" class="form-control transparent-input location-bar"
+                   placeholder="enter your location"/>
         </div>
-            <div class="categories col-md-8 col-md-offset-2">
-                <div th:each="category: ${categories}" class="date_type one-third"  th:attr="data-db-id=${category.id}">
-                    <button type="submit" class="btn transparent-button category-button btn-block" th:text="${category.dateType}"></button>
-                </div>
+        <div class="row no-gutter">
+            <div class="categories col-md-10 col-md-offset-1">
+                <!--<div th:each="category: ${categories}" class="date_type col-md-3 col-sm-4 col-xs-6 col-lg-3"-->
+                <!--th:attr="data-db-id=${category.id}">-->
+                <!--<button type="submit" class="btn transparent-button category-button btn-block">-->
+                <!--&lt;!&ndash;th:text="${category.dateType}">&ndash;&gt;-->
+                <!--<img th:src="@{'/img/' + ${category.id} + '.png'}" style="height: 100%; width: 100%"/>-->
+                <!--</button>-->
+                <!--</div>-->
+                    <div class="date_type col-md-3 col-sm-4 col-xs-6 col-lg-3 animated fadeIn" id="first-date" data-db-id="1">
+                        <button type="submit" class="btn transparent-button category-button btn-block"><p
+                                class="opaque">Casual First Date</p></button>
+                    </div>
+                    <div class="date_type col-md-3 col-sm-4 col-xs-6 col-lg-3 animated fadeIn" data-db-id="2">
+                        <button type="submit" class="btn transparent-button category-button btn-block" id="anniversary">
+                            <p class="opaque">Anniversary</p></button>
+                    </div>
+                    <div class="date_type col-md-3 col-sm-4 col-xs-6 col-lg-3 animated fadeIn" data-db-id="3">
+                        <button type="submit" class="btn transparent-button category-button btn-block" id="outdoors"><p
+                                class="opaque">Outdoors</p></button>
+                    </div>
+                    <div class="date_type col-md-3 col-sm-4 col-xs-6 col-lg-3 animated fadeIn" data-db-id="4">
+                        <button type="submit" class="btn transparent-button category-button btn-block" id="sightseeing">
+                            <p class="opaque">Sightseeing</p></button>
+                    </div>
+                    <div class="date_type col-md-3 col-sm-4 col-xs-6 col-lg-3 animated fadeIn" data-db-id="5">
+                        <button type="submit" class="btn transparent-button category-button btn-block" id="romantic"><p
+                                class="opaque">Romantic</p></button>
+                    </div>
+                    <div class="date_type col-md-3 col-sm-4 col-xs-6 col-lg-3 animated fadeIn" data-db-id="6">
+                        <button type="submit" class="btn transparent-button category-button btn-block" id="relaxing"><p
+                                class="opaque">Relaxing</p></button>
+                    </div>
+                    <div class="date_type col-md-3 col-sm-4 col-xs-6 col-lg-3 animated fadeIn" data-db-id="7">
+                        <button type="submit" class="btn transparent-button category-button btn-block" id="online-irl">
+                            <p class="opaque">Online to IRL</p></button>
+                    </div>
+                    <div class="date_type col-md-3 col-sm-4 col-xs-6 col-lg-3 animated fadeIn" data-db-id="8">
+                        <button type="submit" class="btn transparent-button category-button btn-block" id="artsy"><p
+                                class="opaque">Artsy</p></button>
+                    </div>
+                    <div class="date_type col-md-3 col-sm-4 col-xs-6 col-lg-3 animated fadeIn" data-db-id="9">
+                        <button type="submit" class="btn transparent-button category-button btn-block" id="live-music">
+                            <p class="opaque">Live Music</p></button>
+                    </div>
+                    <div class="date_type col-md-3 col-sm-4 col-xs-6 col-lg-3 animated fadeIn" data-db-id="10">
+                        <button type="submit" class="btn transparent-button category-button btn-block" id="no-money"><p
+                                class="opaque">No $$ No Problem</p></button>
+                    </div>
+                    <div class="date_type col-md-3 col-sm-4 col-xs-6 col-lg-3 animated fadeIn" data-db-id="11">
+                        <button type="submit" class="btn transparent-button category-button btn-block" id="classy"><p
+                                class="opaque">Classy</p></button>
+                    </div>
+                    <div class="date_type col-md-3 col-sm-4 col-xs-6 col-lg-3 animated fadeIn" data-db-id="12">
+                        <button type="submit" class="btn transparent-button category-button btn-block" id="playful"><p
+                                class="opaque">Playful</p></button>
+                    </div>
             </div>
+        </div>
     </div>
     <div class="row">
         <div class="row wrapper test" id="showPage" style="display: none;">
+            <br/>
+            <br/>
             <div class="col-md-3 col-xs-3 love-hate select-place-to-go">
                 <button sec:authorize="isAuthenticated()" class="heart-button btn">
                     <div class="front-button animated pulse infinite" id="heart">
-                        <img src="http://www.clker.com/cliparts/j/m/c/r/d/t/coral-heart-hi.png" height="100" width="100"/>
+                        <img src="http://www.clker.com/cliparts/j/m/c/r/d/t/coral-heart-hi.png" height="100"
+                             width="100"/>
                     </div>
                 </button>
             </div>

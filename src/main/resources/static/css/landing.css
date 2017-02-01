@@ -22,9 +22,7 @@ input {
     font-family: sans-serif;
 }
 
-/*.container > .categories {*/
-    /*display: table-cell;*/
-    /*vertical-align: middle;*/
+/*.categories {*/
 /*}*/
 
 .button-design {
@@ -109,12 +107,13 @@ h1 {
 }
 
 #title {
-    font-size: 7em;
+    font-size: 9em;
     padding: 10px;
     margin: 0 auto;
     font-family: 'ostrich', sans-serif;
     color: black;
 }
+
 
 .btn {
     background-color: transparent;
@@ -136,10 +135,6 @@ h1 {
     background-color: transparent;
 }
 
-/*.date_type {*/
-    /*vertical-align: middle;*/
-    /*float: left;*/
-/*}*/
 
 /*business search*/
 input.transparent-input {
@@ -166,6 +161,7 @@ input.transparent-input {
     transition: .5s ease;
     backface-visibility: hidden;
     border-radius: 8px;
+    margin-top: 4em;
 }
 
 .middle {
@@ -192,9 +188,6 @@ input.transparent-input {
     padding: 10px 32px;
 }
 
-/*#yelpUrl {*/
-/*color: floralwhite;*/
-/*}*/
 
 .wrapper {
     display: inline-block;
@@ -316,11 +309,116 @@ input.transparent-input {
 
 .category-button {
     border-radius: 0;
-    padding: 4em;
+    padding: 6em 0;
+    text-align: center;
 }
 
 .location-bar {
     margin-bottom: 1em;
+}
+
+.row.no-gutter {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#screw-this{
+    background-color: black;
+}
+
+.date_type:hover {
+    opacity: .75;
+    background-color: black;
+}
+
+.opaque {
+    color: white;
+    background-color: black;
+    background: rgba(204, 204, 204, 0.40);
+    font-size: 1.5em;
+}
+
+.opaque:hover {
+    color: black;
+}
+
+
+#first-date {
+    background-repeat: no-repeat;
+    background-image: url('/img/first-date.jpg');
+    background-size: cover;
+}
+
+#anniversary {
+    background-repeat: no-repeat;
+    background-image: url('/img/anniversary.png');
+    background-size: cover;
+}
+
+#outdoors {
+    background-repeat: no-repeat;
+    background-image: url('/img/outdoors.jpg');
+    background-size: cover;
+}
+
+#sightseeing {
+    background-repeat: no-repeat;
+    background-image: url('/img/sightseeing.jpg');
+    background-size: cover;
+}
+
+#playful {
+    background-repeat: no-repeat;
+    background-image: url('/img/foosball.jpg');
+    background-size: cover;
+}
+
+#classy{
+    background-repeat: no-repeat;
+    background-image: url('/img/classy.png');
+    background-size: cover;
+}
+
+#romantic {
+    background-repeat: no-repeat;
+    background-image: url('/img/relax.jpg');
+    background-size: cover;
+}
+
+#no-money {
+    background-repeat: no-repeat;
+    background-image: url('/img/pig.jpg');
+    background-size: cover;
+}
+
+#live-music {
+    background-repeat: no-repeat;
+    background-image: url('/img/livemusic.png');
+    background-size: cover;
+}
+
+#artsy {
+    background-repeat: no-repeat;
+    background-image: url('/img/artsy.png');
+    background-size: cover;
+}
+
+#online-irl {
+    background-repeat: no-repeat;
+    background-image: url('/img/online-irl.jpg');
+    background-size: cover;
+}
+
+#relaxing {
+    background-repeat: no-repeat;
+    background-image: url('/img/romantic.jpg');
+    background-size: cover;
 }
 
 .navtext {
