@@ -31,8 +31,9 @@ database. They can also add recommendations for what kind of "date" that
 "business/location" is good for. 
 
 5. If a location is searched that has no "location/business" reviews in the 
-Tryst database. Tryst will randomly recommend a top Yelp.com rated "restaurant/location".
+Tryst database. Nothing Happens.. 
 
 ## Future Features 
 
-1.
+1. Something needs to happen if a location is searched that has no "location/business"
+ reviews in the Tryst database.
