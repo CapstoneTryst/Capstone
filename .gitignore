@@ -24,4 +24,5 @@ nbdist/
 .nb-gradle/
 .DS_Store
 
-/src/main/resources/application.properties
+# Yelp API Authentication Credentials
+application.properties
