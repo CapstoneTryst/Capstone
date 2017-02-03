@@ -25,5 +25,4 @@ nbdist/
 .DS_Store
 
 # Yelp API Authentication Credentials
-# application.properties
-!/src/main/resources/application.properties
+/src/main/resources/application.properties
